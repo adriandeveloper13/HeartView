@@ -1,0 +1,71 @@
+﻿@model IEnumerable<HealthView.Models.Doctori>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listare</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeDoctor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrenumeDoctor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Functie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Spital)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDDoctor)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeDoctor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrenumeDoctor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Functie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spital)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDDoctor)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

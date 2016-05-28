@@ -1,0 +1,5 @@
+D:\PROIECT IP\HeartView\HealthView.Tests\bin\Debug\HealthView.Tests.dll
+D:\PROIECT IP\HeartView\HealthView.Tests\bin\Debug\HealthView.Tests.pdb
+D:\PROIECT IP\HeartView\HealthView.Tests\obj\Debug\HealthView.Tests.csprojResolveAssemblyReference.cache
+D:\PROIECT IP\HeartView\HealthView.Tests\obj\Debug\HealthView.Tests.dll
+D:\PROIECT IP\HeartView\HealthView.Tests\obj\Debug\HealthView.Tests.pdb
