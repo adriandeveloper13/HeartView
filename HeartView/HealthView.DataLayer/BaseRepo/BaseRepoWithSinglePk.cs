@@ -9,7 +9,7 @@ namespace HealthView.DataLayer.BaseRepo
     public class BaseRepoWithSinglePk<T> : BaseRepo<T>
     where T : class, IDataAccesObjectWithSinglePk, new()
     {
-        public BaseRepoWithSinglePk(IP_DatabaseEntities context) : base(context)
+        public BaseRepoWithSinglePk(Entities context) : base(context)
         {
         }
 
@@ -61,9 +61,9 @@ namespace HealthView.DataLayer.BaseRepo
             return await GetSingleAsync(entity => entity.Id == id, navigationProperties);
         }
 
-        //public async Task<IList<T>> GetAllAsync(int status, IList<string> navigationProperties = null)
-        //{
-        //    return await GetListAsync(entity => entity.Status == status, navigationProperties);
-        //}
+        public async Task<IList<T>> ListAllAsync(IList<string> navigationProperties = null)
+        {
+            return await GetAllAsync(navigationProperties);
+        }
     }
 }

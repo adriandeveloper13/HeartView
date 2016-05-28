@@ -5,15 +5,15 @@ namespace HealthView.DataLayer
 {
     public abstract class DataRepository : IDisposable
     {
-        private IP_DatabaseEntities mContext;
+        private Entities mContext;
 
-        protected internal DataRepository(IP_DatabaseEntities context)
+        protected internal DataRepository(Entities context)
         {
             // ReSharper disable once DoNotCallOverridableMethodsInConstructor
             Context = context;
         }
 
-        public virtual IP_DatabaseEntities Context
+        public virtual Entities Context
         {
             get
             {

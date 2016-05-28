@@ -9,11 +9,11 @@ namespace HealthView.DataLayer
 {
     public class DataLayerUnitOfWork
     {
-        private readonly IP_DatabaseEntities mContext;
+        private readonly Entities mContext;
 
         public DataLayerUnitOfWork()
         {
-            mContext = new IP_DatabaseEntities();
+            mContext = new Entities();
         }
 
         #region Repository fields
@@ -26,9 +26,9 @@ namespace HealthView.DataLayer
 
         //#region Repository factory
 
-        private static IP_DatabaseEntities InstantiateContext()
+        private static Entities InstantiateContext()
         {
-            return new IP_DatabaseEntities();
+            return new Entities();
         }
 
         public static DoctoriRepository NewDoctoriRepository()

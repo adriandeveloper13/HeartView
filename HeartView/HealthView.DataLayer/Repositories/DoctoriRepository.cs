@@ -12,7 +12,7 @@ namespace HealthView.DataLayer.Repositories
 {
     public class DoctoriRepository: BaseRepoWithSinglePk<Doctori>
     {
-        public DoctoriRepository(IP_DatabaseEntities context) : base(context)
+        public DoctoriRepository(Entities context) : base(context)
         {
         }
 
@@ -41,6 +41,11 @@ namespace HealthView.DataLayer.Repositories
         public async Task<IList<Doctori>> GetAllByGroupIdAsync(Guid pacientId, IList<string> navigationProperties = null)
         {
             return await GetListAsync(user => user.Pacienti.Any(pacienti => pacienti.IDPacient == pacientId), navigationProperties);
+        }
+
+        public async Task<IList<Doctori>> ListAsync()
+        {
+            return await base.ListAllAsync();
         }
     }
 }

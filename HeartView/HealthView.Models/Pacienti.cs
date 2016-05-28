@@ -37,8 +37,9 @@ namespace HealthView.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ActivitatePacienti> ActivitatePacienti { get; set; }
-        public virtual Doctori Doctori { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recomandari> Recomandari { get; set; }
+        public virtual AspNetUsers AspNetUsers { get; set; }
+        public virtual Doctori Doctori { get; set; }
     }
 }

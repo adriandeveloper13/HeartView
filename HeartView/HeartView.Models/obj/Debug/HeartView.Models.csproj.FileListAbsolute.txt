@@ -1,4 +1,0 @@
-D:\PROIECT IP\HeartView\HeartView.Models\bin\Debug\HeartView.Models.dll
-D:\PROIECT IP\HeartView\HeartView.Models\bin\Debug\HeartView.Models.pdb
-D:\PROIECT IP\HeartView\HeartView.Models\obj\Debug\HeartView.Models.dll
-D:\PROIECT IP\HeartView\HeartView.Models\obj\Debug\HeartView.Models.pdb

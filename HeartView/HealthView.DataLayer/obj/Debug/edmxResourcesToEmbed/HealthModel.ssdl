@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HealthModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ActivitatePacienti">
+    <Key>
+      <PropertyRef Name="IDRecomandare" />
+    </Key>
+    <Property Name="IDRecomandare" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="__createdAt" Type="datetimeoffset" Precision="3" />
+    <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
+    <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="__deleted" Type="bit" />
+    <Property Name="Umiditate" Type="float" />
+    <Property Name="Data" Type="datetimeoffset" Precision="3" />
+    <Property Name="SenzorEKG" Type="float" />
+    <Property Name="IDPacient" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Puls" Type="float" />
+    <Property Name="Status" Type="nvarchar(max)" />
+    <Property Name="Temperatura" Type="float" />
+    <Property Name="complete" Type="bit" />
+    <Property Name="IDDoctor" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Recomandari">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDPacient" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TipRecomandare" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Durata" Type="numeric" Precision="38" Scale="20" />
+    <Property Name="AlteIndicatii" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDDoctor" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Doctori">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="NumeDoctor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrenumeDoctor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Functie" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Spital" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AspNetUserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pacienti">
+    <Key>
+      <PropertyRef Name="IDPacient" />
+    </Key>
+    <Property Name="NumePacient" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrenumePacient" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CNP" Type="numeric" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="Varsta" Type="int" Nullable="false" />
+    <Property Name="Adresa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefon" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ocupatie" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IDPacient" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IDDoctor" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BadgeCode" Type="nchar" MaxLength="10" />
+    <Property Name="AspNetUserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ActivitatePacienti_ToTable">
+    <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="1" />
+    <End Role="ActivitatePacienti" Type="Self.ActivitatePacienti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacienti">
+        <PropertyRef Name="IDPacient" />
+      </Principal>
+      <Dependent Role="ActivitatePacienti">
+        <PropertyRef Name="IDPacient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivitatePacienti_ToTable_1">
+    <End Role="Doctori" Type="Self.Doctori" Multiplicity="0..1" />
+    <End Role="ActivitatePacienti" Type="Self.ActivitatePacienti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctori">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActivitatePacienti">
+        <PropertyRef Name="IDDoctor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctori_ToTable">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="Doctori" Type="Self.Doctori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Doctori">
+        <PropertyRef Name="AspNetUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacienti_0">
+    <End Role="Doctori" Type="Self.Doctori" Multiplicity="1" />
+    <End Role="Recomandari" Type="Self.Recomandari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctori">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recomandari">
+        <PropertyRef Name="IDDoctor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacienti_01">
+    <End Role="Doctori" Type="Self.Doctori" Multiplicity="1" />
+    <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctori">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pacienti">
+        <PropertyRef Name="IDDoctor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacienti_ToTable">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pacienti">
+        <PropertyRef Name="AspNetUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recomandari_ToTable">
+    <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="1" />
+    <End Role="Recomandari" Type="Self.Recomandari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacienti">
+        <PropertyRef Name="IDPacient" />
+      </Principal>
+      <Dependent Role="Recomandari">
+        <PropertyRef Name="IDPacient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HealthModelStoreContainer">
+    <EntitySet Name="ActivitatePacienti" EntityType="Self.ActivitatePacienti" Schema="ActivitatePacienti" store:Type="Tables" />
+    <EntitySet Name="Recomandari" EntityType="Self.Recomandari" Schema="ActivitatePacienti" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctori" EntityType="Self.Doctori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pacienti" EntityType="Self.Pacienti" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ActivitatePacienti_ToTable" Association="Self.FK_ActivitatePacienti_ToTable">
+      <End Role="Pacienti" EntitySet="Pacienti" />
+      <End Role="ActivitatePacienti" EntitySet="ActivitatePacienti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivitatePacienti_ToTable_1" Association="Self.FK_ActivitatePacienti_ToTable_1">
+      <End Role="Doctori" EntitySet="Doctori" />
+      <End Role="ActivitatePacienti" EntitySet="ActivitatePacienti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctori_ToTable" Association="Self.FK_Doctori_ToTable">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Doctori" EntitySet="Doctori" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacienti_0" Association="Self.FK_Pacienti_0">
+      <End Role="Doctori" EntitySet="Doctori" />
+      <End Role="Recomandari" EntitySet="Recomandari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacienti_01" Association="Self.FK_Pacienti_01">
+      <End Role="Doctori" EntitySet="Doctori" />
+      <End Role="Pacienti" EntitySet="Pacienti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacienti_ToTable" Association="Self.FK_Pacienti_ToTable">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Pacienti" EntitySet="Pacienti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recomandari_ToTable" Association="Self.FK_Recomandari_ToTable">
+      <End Role="Pacienti" EntitySet="Pacienti" />
+      <End Role="Recomandari" EntitySet="Recomandari" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

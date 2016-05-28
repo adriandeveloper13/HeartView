@@ -8,8 +8,8 @@ using HealthView.DataLayer.Interfaces;
 namespace HealthView.BusinessLogic.BaseCore
 {
     public abstract class BaseCoreWithSinglePk<T, U> : BaseCore<T, U>
-                    where T : class, new()
-                    where U : class, IDataAccesObjectWithSinglePk, new()
+                      where T : class, IModelWithSinglePK, new()
+                      where U : class, IDataAccesObjectWithSinglePk, new()
     {
         public async Task<T> CreateAsync(T model, IList<string> navigationProperties = null)
         {

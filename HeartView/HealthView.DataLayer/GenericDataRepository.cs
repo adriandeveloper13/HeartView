@@ -14,7 +14,7 @@ namespace HealthView.DataLayer
         private bool mIsEntityTrackingOn;
         private Func<IList<string>, IQueryable<T>> mQueryGenerator;
         protected DbSet<T> mDbSet;
-        protected GenericDataRepository(IP_DatabaseEntities context) : base(context)
+        protected GenericDataRepository(Entities context) : base(context)
         {
             IsEntityTrackingOn = true;
         }
@@ -27,7 +27,7 @@ namespace HealthView.DataLayer
                 mQueryGenerator = mIsEntityTrackingOn ? (Func<IList<string>, IQueryable<T>>)GenerateQuery : GenerateNonTrackingQuery;
             }
         }
-        public override IP_DatabaseEntities Context
+        public override Entities Context
         {
             get { return base.Context; }
             set

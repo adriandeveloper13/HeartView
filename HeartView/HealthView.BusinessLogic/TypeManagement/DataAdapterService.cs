@@ -26,7 +26,6 @@ namespace HealthView.BusinessLogic
                 DasConfigurator.ConfigureDoctori(config);
                 DasConfigurator.ConfigurePacienti(config);
                 DasConfigurator.ConfigureActivitatePacienti(config);
-                DasConfigurator.ConfigureIdentitate(config);
                 DasConfigurator.ConfigureRecomandari(config);
 
             });

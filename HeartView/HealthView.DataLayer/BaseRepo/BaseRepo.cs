@@ -7,7 +7,7 @@ namespace HealthView.DataLayer.BaseRepo
     public abstract class BaseRepo<T> : GenericDataRepository<T>
     where T : class, IDataAccesObject
     {
-        public BaseRepo(IP_DatabaseEntities context) : base(context)
+        public BaseRepo(Entities context) : base(context)
         {
         }
 

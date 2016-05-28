@@ -71,8 +71,12 @@
     <Folder Include="scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\HealthView.DataLayer\HealthView.DataLayer.csproj">
-      <Project>{200f70d5-ba4b-477a-84af-03c90f155b14}</Project>
+      <Project>{200F70D5-BA4B-477A-84AF-03C90F155B14}</Project>
       <Name>HealthView.DataLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\HealthView.Interfaces\HealthView.Interfaces.csproj">
@@ -80,13 +84,13 @@
       <Name>HealthView.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\HealthView.Models\HealthView.Models.csproj">
-      <Project>{8aaa2582-eaf1-49c8-9fa1-3d3e826bf680}</Project>
+      <Project>{8AAA2582-EAF1-49C8-9FA1-3D3E826BF680}</Project>
       <Name>HealthView.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\LoggingService\LoggingService.csproj">
+      <Project>{e23996df-e12a-4823-b807-2f63b0a1a1cf}</Project>
+      <Name>LoggingService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

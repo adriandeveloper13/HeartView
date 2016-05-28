@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using HealthView.BusinessLogic.ModelCore;
+using HealthView.Models;
 
 namespace HeartView.Controllers
 {
@@ -24,11 +22,16 @@ namespace HeartView.Controllers
 
         [HttpGet]
         [ActionName("Listare")]
-        public static async  Task<ActionResult> Listare()
+        public virtual async Task<IList<Doctori>> Listare()
         {
-            var doctoriList = await  DoctoriCore.Instance().GetListAsync();
+            var doctoriList = await DoctoriCore.Instance().List();
 
-            return View();
+            if (doctoriList == null)
+            {
+                return new List<Doctori>();
+            }
+            return null;
+            //return View();
         }
         // GET: Doctori/Create
         public ActionResult Create()

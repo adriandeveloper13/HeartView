@@ -43,6 +43,15 @@
     <Compile Include="ActivitatePacienti.cs">
       <DependentUpon>HeartModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AspNetRoles.cs">
+      <DependentUpon>HeartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogins.cs">
+      <DependentUpon>HeartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUsers.cs">
+      <DependentUpon>HeartModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Doctori.cs">
       <DependentUpon>HeartModel.tt</DependentUpon>

@@ -52,32 +52,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivitatePacienti.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetRoles.cs">
+      <DependentUpon>HealthModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogins.cs">
+      <DependentUpon>HealthModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUsers.cs">
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="BaseRepo\BaseRepo.cs" />
     <Compile Include="BaseRepo\BaseRepoWithCompositePk.cs" />
     <Compile Include="BaseRepo\BaseRepoWithSinglePk.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DataLayerUnitOfWork.cs" />
     <Compile Include="DataRepository.cs" />
     <Compile Include="Doctori.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GenericDataRepository.cs" />
-    <Compile Include="HeartModel.Context.cs">
+    <Compile Include="HealthModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HeartModel.Context.tt</DependentUpon>
+      <DependentUpon>HealthModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="HeartModel.cs">
+    <Compile Include="HealthModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="HeartModel.Designer.cs">
+    <Compile Include="HealthModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HeartModel.edmx</DependentUpon>
+      <DependentUpon>HealthModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\StoredProcedureExecutor.cs" />
     <Compile Include="Interfaces\IDataAccesObject.cs" />
@@ -85,22 +93,22 @@
     <Compile Include="Interfaces\IDataAccesObjectWithSinglePKAndStatus.cs" />
     <Compile Include="Interfaces\IDataAccesObjectWithStatus.cs" />
     <Compile Include="Pacienti.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recomandari.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\DoctoriRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="HeartModel.edmx">
+    <EntityDeploy Include="HealthModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HeartModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>HealthModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="HeartModel.edmx.diagram">
-      <DependentUpon>HeartModel.edmx</DependentUpon>
+    <None Include="HealthModel.edmx.diagram">
+      <DependentUpon>HealthModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -108,15 +116,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HeartModel.Context.tt">
+    <Content Include="HealthModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HeartModel.edmx</DependentUpon>
-      <LastGenOutput>HeartModel.Context.cs</LastGenOutput>
+      <DependentUpon>HealthModel.edmx</DependentUpon>
+      <LastGenOutput>HealthModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="HeartModel.tt">
+    <Content Include="HealthModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HeartModel.edmx</DependentUpon>
-      <LastGenOutput>HeartModel.cs</LastGenOutput>
+      <DependentUpon>HealthModel.edmx</DependentUpon>
+      <LastGenOutput>HealthModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

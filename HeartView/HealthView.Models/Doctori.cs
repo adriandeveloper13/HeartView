@@ -12,14 +12,14 @@ namespace HealthView.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Doctori:Interfaces.IModel
+    public partial class Doctori:Interfaces.IModelWithSinglePK
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Doctori()
         {
             this.ActivitatePacienti = new HashSet<ActivitatePacienti>();
-            this.Pacienti = new HashSet<Pacienti>();
             this.Recomandari = new HashSet<Recomandari>();
+            this.Pacienti = new HashSet<Pacienti>();
         }
     
         public string NumeDoctor { get; set; }
@@ -27,14 +27,15 @@ namespace HealthView.Models
         public string Functie { get; set; }
         public string Spital { get; set; }
         public string Status { get; set; }
-        public System.Guid IDDoctor { get; set; }
+        public System.Guid Id { get; set; }
         public string AspNetUserId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ActivitatePacienti> ActivitatePacienti { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pacienti> Pacienti { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recomandari> Recomandari { get; set; }
+        public virtual AspNetUsers AspNetUsers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pacienti> Pacienti { get; set; }
     }
 }
