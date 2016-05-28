@@ -73,3 +73,5 @@ D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\Microsoft.AI.Dependenc
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\Microsoft.AI.WindowsServer.xml
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\Microsoft.ApplicationInsights.xml
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\CustomMembership.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\CustomMembership.pdb

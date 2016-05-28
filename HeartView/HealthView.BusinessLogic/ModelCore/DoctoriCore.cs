@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HealthView.BusinessLogic.BaseCore;
+using HealthView.BusinessLogic.TypeManagement;
 using HealthView.DataLayer;
 using HealthView.DataLayer.BaseRepo;
 using HealthView.DataLayer.Repositories;
@@ -28,14 +28,23 @@ namespace HealthView.BusinessLogic.ModelCore
         {
             using (var doctoriRepository = (DoctoriRepository) GetRepoInstance())
             {
-                var doctori = await doctoriRepository.ListAsync();
-
-                if (doctori == null || doctori.Count == 0)
+                try
                 {
-                    return new List<Doctori>();
-                }
+                    var doctori = await doctoriRepository.ListAsync();
 
-                return doctori.CopyTo<Doctori>();
+                    if (doctori == null || doctori.Count == 0)
+                    {
+                        return new List<Doctori>();
+                    }
+
+                    return doctori.CopyTo<Doctori>();
+                }
+                catch (Exception ex)
+                {
+                        
+                    throw;
+                }
+                
             }
         }
 

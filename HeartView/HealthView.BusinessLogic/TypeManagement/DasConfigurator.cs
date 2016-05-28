@@ -23,6 +23,7 @@ namespace HealthView.BusinessLogic.TypeManagement
                     source.Doctori.Configure(doctor => { doctor.Pacienti = null; });
                     source.ActivitatePacienti.Configure(activitate => { activitate.Pacienti = null;  });
                     source.Recomandari.Configure(recomandare => { recomandare.Pacienti = null;  });
+                    source.AspNetUsers.Configure(aspNetUser => { aspNetUser.Pacienti = null; });
                 });
 
             config.CreateMap<DataLayer.Pacienti, Pacienti>()
@@ -31,9 +32,43 @@ namespace HealthView.BusinessLogic.TypeManagement
                     source.Doctori.Configure(doctor => { doctor.Pacienti = null; });
                     source.ActivitatePacienti.Configure(activitate => { activitate.Pacienti = null; });
                     source.Recomandari.Configure(recomandare => { recomandare.Pacienti = null; });
+                    source.AspNetUsers.Configure(aspNetUser => { aspNetUser.Pacienti = null; });
                 });
         }
 
+        internal static void ConfigureAspNetUser(IMapperConfiguration config)
+        {
+            config.CreateMap<AspNetUsers, DataLayer.AspNetUsers>()
+                .BeforeMap((source, destination) =>
+                {
+                    source.Doctori.Configure(doctor => { doctor.AspNetUsers = null; });
+                    source.Pacienti.Configure(pacient => { pacient.AspNetUsers = null; });
+                    source.AspNetRoles.Configure(aspNetRole => { aspNetRole.AspNetUsers = null; });
+                });
+
+            config.CreateMap<DataLayer.AspNetUsers, AspNetUsers>()
+                .BeforeMap((source, destination) =>
+                {
+                    source.Doctori.Configure(doctor => { doctor.AspNetUsers = null; });
+                    source.Pacienti.Configure(pacient => { pacient.AspNetUsers = null; });
+                    source.AspNetRoles.Configure(aspNetRole => { aspNetRole.AspNetUsers = null; });
+                });
+        }
+
+        internal static void ConfigureAspNetRoles(IMapperConfiguration config)
+        {
+            config.CreateMap<AspNetRoles, DataLayer.AspNetRoles>()
+                .BeforeMap((source, destination) =>
+                {
+                    source.AspNetUsers.Configure(aspNetUser => { aspNetUser.AspNetRoles = null; });
+                });
+
+            config.CreateMap<DataLayer.AspNetRoles, AspNetRoles>()
+                .BeforeMap((source, destination) =>
+                {
+                    source.AspNetUsers.Configure(aspNetUser => { aspNetUser.AspNetRoles = null; });
+                });
+        }
         internal static void ConfigureActivitatePacienti(IMapperConfiguration config)
         {
             config.CreateMap<ActivitatePacienti, DataLayer.ActivitatePacienti>()
@@ -58,6 +93,7 @@ namespace HealthView.BusinessLogic.TypeManagement
                 source.Pacienti.Configure(pacient => { pacient.Doctori = null; });
                 source.ActivitatePacienti.Configure(activitate => { activitate.Doctori = null; });
                 source.Recomandari.Configure(recomandare => { recomandare.Doctori = null; });
+                source.AspNetUsers.Configure(aspNetUser => { aspNetUser.Doctori = null; });
             });
 
             config.CreateMap<DataLayer.Doctori, Doctori>().BeforeMap((source, destination) =>
@@ -65,6 +101,7 @@ namespace HealthView.BusinessLogic.TypeManagement
                 source.Pacienti.Configure(pacient => { pacient.Doctori = null; });
                 source.ActivitatePacienti.Configure(activitate => { activitate.Doctori = null; });
                 source.Recomandari.Configure(recomandare => { recomandare.Doctori = null; });
+                source.AspNetUsers.Configure(aspNetUser => { aspNetUser.Doctori = null; });
             });
         }
 
@@ -76,9 +113,10 @@ namespace HealthView.BusinessLogic.TypeManagement
                 source.Doctori.Configure(doctor => { doctor.Recomandari = null; });
             });
 
-            config.CreateMap<DataLayer.Doctori, Doctori>().BeforeMap((source, destination) =>
+            config.CreateMap<DataLayer.Recomandari, Recomandari>().BeforeMap((source, destination) =>
             {
                 source.Pacienti.Configure(pacient => { pacient.Recomandari = null; });
+                source.Doctori.Configure(doctor => { doctor.Recomandari = null; });
             });
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using HealthView.BusinessLogic.TypeManagement;
 using HealthView.DataLayer.BaseRepo;
 using HealthView.Models.Interfaces;
 using HealthView.DataLayer.Interfaces;

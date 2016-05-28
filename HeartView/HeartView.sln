@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthView.Interfaces", "He
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingService", "LoggingService\LoggingService.csproj", "{E23996DF-E12A-4823-B807-2F63B0A1A1CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMembership", "CustomMembership\CustomMembership.csproj", "{E9A949B0-709F-425D-991E-F8339BE7F6C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{E23996DF-E12A-4823-B807-2F63B0A1A1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E23996DF-E12A-4823-B807-2F63B0A1A1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E23996DF-E12A-4823-B807-2F63B0A1A1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A949B0-709F-425D-991E-F8339BE7F6C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A949B0-709F-425D-991E-F8339BE7F6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A949B0-709F-425D-991E-F8339BE7F6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A949B0-709F-425D-991E-F8339BE7F6C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,5 +81,6 @@ Global
 		{8AAA2582-EAF1-49C8-9FA1-3D3E826BF680} = {A2097F2B-DC87-41F1-8F7E-B9B53C596693}
 		{FC734A46-7709-43A4-8AA4-9836B1FFCE0F} = {48DF3F23-5AB1-46F5-8DD3-A6503E9A7EB7}
 		{E23996DF-E12A-4823-B807-2F63B0A1A1CF} = {48DF3F23-5AB1-46F5-8DD3-A6503E9A7EB7}
+		{E9A949B0-709F-425D-991E-F8339BE7F6C2} = {48DF3F23-5AB1-46F5-8DD3-A6503E9A7EB7}
 	EndGlobalSection
 EndGlobal

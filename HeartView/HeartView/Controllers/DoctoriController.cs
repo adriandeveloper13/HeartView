@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using CustomMembership;
 using HealthView.BusinessLogic.ModelCore;
 using HealthView.Models;
 
@@ -22,37 +23,47 @@ namespace HeartView.Controllers
 
         [HttpGet]
         [ActionName("Listare")]
-        public virtual async Task<IList<Doctori>> Listare()
+        public virtual async Task<ActionResult> Listare()
         {
             var doctoriList = await DoctoriCore.Instance().List();
 
             if (doctoriList == null)
             {
-                return new List<Doctori>();
+                return null;
             }
-            return null;
-            //return View();
+            return View(doctoriList);
         }
         // GET: Doctori/Create
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return View();
         }
 
         // POST: Doctori/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public virtual async Task<ActionResult> Create(Doctori doctorModel )
         {
             try
             {
-                // TODO: Add insert logic here
+                var prepareDoctorModel = new Doctori
+                {
+                    NumeDoctor = doctorModel.NumeDoctor,
+                    PrenumeDoctor = doctorModel.PrenumeDoctor,
+                    Functie = doctorModel.Functie,
+                    Spital = doctorModel.Spital,
+                    Status = doctorModel.Status,
+                    AspNetUserId = ((CustomIdentity) User.Identity).AspNetUserId
+                };
 
-                return RedirectToAction("Index");
+                var doctor = await DoctoriCore.Instance().CreateAsync(prepareDoctorModel);
+
+                return Json(doctor);
             }
             catch
             {
-                return View();
+                return Json(null);
             }
+
         }
 
         // GET: Doctori/Edit/5

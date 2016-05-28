@@ -8,7 +8,7 @@ using HealthView.BusinessLogic.TypeManagement;
 using HealthView.DataLayer.Interfaces;
 using HealthView.Models.Interfaces;
 
-namespace HealthView.BusinessLogic
+namespace HealthView.BusinessLogic.TypeManagement
 {
     internal static class DataAdapterService
     {
@@ -27,7 +27,8 @@ namespace HealthView.BusinessLogic
                 DasConfigurator.ConfigurePacienti(config);
                 DasConfigurator.ConfigureActivitatePacienti(config);
                 DasConfigurator.ConfigureRecomandari(config);
-
+                DasConfigurator.ConfigureAspNetUser(config);
+                DasConfigurator.ConfigureAspNetRoles(config);
             });
             mapperConfiguration.AssertConfigurationIsValid();
             mMapper = mapperConfiguration.CreateMapper();

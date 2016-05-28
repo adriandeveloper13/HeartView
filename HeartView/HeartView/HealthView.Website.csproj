@@ -251,6 +251,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Doctori\Listare.cshtml" />
+    <Content Include="Views\Doctori\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,6 +269,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CustomMembership\CustomMembership.csproj">
+      <Project>{E9A949B0-709F-425D-991E-F8339BE7F6C2}</Project>
+      <Name>CustomMembership</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HealthView.BusinessLogic\HealthView.BusinessLogic.csproj">
       <Project>{772307c0-41be-4d8a-a4a0-8415086007fb}</Project>
       <Name>HealthView.BusinessLogic</Name>
