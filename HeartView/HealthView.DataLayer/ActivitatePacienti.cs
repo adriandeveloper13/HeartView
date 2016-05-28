@@ -12,17 +12,24 @@ namespace HealthView.DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class ActivitatePacienti:Interfaces.IModel
+    public partial class ActivitatePacienti:Interfaces.IDataAccesObject
     {
-        public System.Guid IDActivitate { get; set; }
-        public decimal Puls { get; set; }
-        public decimal Temperatura { get; set; }
-        public decimal Umiditate { get; set; }
-        public decimal EKG { get; set; }
-        public System.DateTime DataMasurarii { get; set; }
-        public string Status { get; set; }
+        public System.Guid IDRecomandare { get; set; }
+        public Nullable<System.DateTimeOffset> C__createdAt { get; set; }
+        public Nullable<System.DateTimeOffset> C__updatedAt { get; set; }
+        public byte[] C__version { get; set; }
+        public Nullable<bool> C__deleted { get; set; }
+        public Nullable<double> Umiditate { get; set; }
+        public Nullable<System.DateTimeOffset> Data { get; set; }
+        public Nullable<double> SenzorEKG { get; set; }
         public System.Guid IDPacient { get; set; }
+        public Nullable<double> Puls { get; set; }
+        public string Status { get; set; }
+        public Nullable<double> Temperatura { get; set; }
+        public Nullable<bool> complete { get; set; }
+        public Nullable<System.Guid> IDDoctor { get; set; }
     
         public virtual Pacienti Pacienti { get; set; }
+        public virtual Doctori Doctori { get; set; }
     }
 }

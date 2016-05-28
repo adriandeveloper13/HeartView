@@ -1,17 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="IP_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="HeartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ActivitatePacienti">
     <Key>
-      <PropertyRef Name="IDActivitate" />
+      <PropertyRef Name="IDRecomandare" />
     </Key>
-    <Property Name="IDActivitate" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Puls" Type="numeric" Precision="5" Scale="2" Nullable="false" />
-    <Property Name="Temperatura" Type="numeric" Precision="4" Scale="2" Nullable="false" />
-    <Property Name="Umiditate" Type="numeric" Precision="5" Scale="2" Nullable="false" />
-    <Property Name="EKG" Type="numeric" Precision="5" Scale="2" Nullable="false" />
-    <Property Name="DataMasurarii" Type="datetime" Nullable="false" />
-    <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IDRecomandare" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="__createdAt" Type="datetimeoffset" Precision="3" />
+    <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
+    <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="__deleted" Type="bit" />
+    <Property Name="Umiditate" Type="float" />
+    <Property Name="Data" Type="datetimeoffset" Precision="3" />
+    <Property Name="SenzorEKG" Type="float" />
     <Property Name="IDPacient" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Puls" Type="float" />
+    <Property Name="Status" Type="nvarchar(max)" />
+    <Property Name="Temperatura" Type="float" />
+    <Property Name="complete" Type="bit" />
+    <Property Name="IDDoctor" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Recomandari">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IDPacient" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TipRecomandare" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Durata" Type="numeric" Precision="38" Scale="20" />
+    <Property Name="AlteIndicatii" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDDoctor" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <EntityType Name="Doctori">
     <Key>
@@ -23,15 +40,7 @@
     <Property Name="Spital" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IDDoctor" Type="uniqueidentifier" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Identitate">
-    <Key>
-      <PropertyRef Name="IDUser" />
-    </Key>
-    <Property Name="IDUser" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Utilizator" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Parola" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Rol" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AspNetUserId" Type="nvarchar" MaxLength="128" Nullable="false" />
   </EntityType>
   <EntityType Name="Pacienti">
     <Key>
@@ -48,18 +57,10 @@
     <Property Name="IDPacient" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="IDDoctor" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BadgeCode" Type="nchar" MaxLength="10" />
+    <Property Name="AspNetUserId" Type="nvarchar" MaxLength="128" Nullable="false" />
   </EntityType>
-  <EntityType Name="Recomandari">
-    <Key>
-      <PropertyRef Name="IDRecomandare" />
-    </Key>
-    <Property Name="IDRecomandare" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="IDPacient" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="TipRecomandare" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Durata" Type="numeric" Precision="4" Scale="2" Nullable="false" />
-    <Property Name="AlteIndicatii" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_ActivitatePacienti_0">
+  <Association Name="FK_ActivitatePacienti_ToTable">
     <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="1" />
     <End Role="ActivitatePacienti" Type="Self.ActivitatePacienti" Multiplicity="*" />
     <ReferentialConstraint>
@@ -71,31 +72,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Identitate_0">
-    <End Role="Doctori" Type="Self.Doctori" Multiplicity="1" />
-    <End Role="Identitate" Type="Self.Identitate" Multiplicity="*" />
+  <Association Name="FK_ActivitatePacienti_ToTable_1">
+    <End Role="Doctori" Type="Self.Doctori" Multiplicity="0..1" />
+    <End Role="ActivitatePacienti" Type="Self.ActivitatePacienti" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Doctori">
         <PropertyRef Name="IDDoctor" />
       </Principal>
-      <Dependent Role="Identitate">
-        <PropertyRef Name="Rol" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Identitate_1">
-    <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="1" />
-    <End Role="Identitate" Type="Self.Identitate" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pacienti">
-        <PropertyRef Name="IDPacient" />
-      </Principal>
-      <Dependent Role="Identitate">
-        <PropertyRef Name="Rol" />
+      <Dependent Role="ActivitatePacienti">
+        <PropertyRef Name="IDDoctor" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Pacienti_0">
+    <End Role="Doctori" Type="Self.Doctori" Multiplicity="1" />
+    <End Role="Recomandari" Type="Self.Recomandari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctori">
+        <PropertyRef Name="IDDoctor" />
+      </Principal>
+      <Dependent Role="Recomandari">
+        <PropertyRef Name="IDDoctor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacienti_01">
     <End Role="Doctori" Type="Self.Doctori" Multiplicity="1" />
     <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="*" />
     <ReferentialConstraint>
@@ -107,7 +108,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Recomandari_0">
+  <Association Name="FK_Recomandari_ToTable">
     <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="1" />
     <End Role="Recomandari" Type="Self.Recomandari" Multiplicity="*" />
     <ReferentialConstraint>
@@ -119,29 +120,28 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="IP_DatabaseModelStoreContainer">
-    <EntitySet Name="ActivitatePacienti" EntityType="Self.ActivitatePacienti" Schema="dbo" store:Type="Tables" />
+  <EntityContainer Name="HeartModelStoreContainer">
+    <EntitySet Name="ActivitatePacienti" EntityType="Self.ActivitatePacienti" Schema="ActivitatePacienti" store:Type="Tables" />
+    <EntitySet Name="Recomandari" EntityType="Self.Recomandari" Schema="ActivitatePacienti" store:Type="Tables" />
     <EntitySet Name="Doctori" EntityType="Self.Doctori" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Identitate" EntityType="Self.Identitate" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pacienti" EntityType="Self.Pacienti" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Recomandari" EntityType="Self.Recomandari" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_ActivitatePacienti_0" Association="Self.FK_ActivitatePacienti_0">
+    <AssociationSet Name="FK_ActivitatePacienti_ToTable" Association="Self.FK_ActivitatePacienti_ToTable">
       <End Role="Pacienti" EntitySet="Pacienti" />
       <End Role="ActivitatePacienti" EntitySet="ActivitatePacienti" />
     </AssociationSet>
-    <AssociationSet Name="FK_Identitate_0" Association="Self.FK_Identitate_0">
+    <AssociationSet Name="FK_ActivitatePacienti_ToTable_1" Association="Self.FK_ActivitatePacienti_ToTable_1">
       <End Role="Doctori" EntitySet="Doctori" />
-      <End Role="Identitate" EntitySet="Identitate" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Identitate_1" Association="Self.FK_Identitate_1">
-      <End Role="Pacienti" EntitySet="Pacienti" />
-      <End Role="Identitate" EntitySet="Identitate" />
+      <End Role="ActivitatePacienti" EntitySet="ActivitatePacienti" />
     </AssociationSet>
     <AssociationSet Name="FK_Pacienti_0" Association="Self.FK_Pacienti_0">
       <End Role="Doctori" EntitySet="Doctori" />
+      <End Role="Recomandari" EntitySet="Recomandari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacienti_01" Association="Self.FK_Pacienti_01">
+      <End Role="Doctori" EntitySet="Doctori" />
       <End Role="Pacienti" EntitySet="Pacienti" />
     </AssociationSet>
-    <AssociationSet Name="FK_Recomandari_0" Association="Self.FK_Recomandari_0">
+    <AssociationSet Name="FK_Recomandari_ToTable" Association="Self.FK_Recomandari_ToTable">
       <End Role="Pacienti" EntitySet="Pacienti" />
       <End Role="Recomandari" EntitySet="Recomandari" />
     </AssociationSet>

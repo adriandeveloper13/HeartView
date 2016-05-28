@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HealthView.BusinessLogic
+namespace HealthView.BusinessLogic.BaseCore
 {
-    public class DataAdapterService 
+    class BaseCoreWithCompositePK
     {
     }
 }

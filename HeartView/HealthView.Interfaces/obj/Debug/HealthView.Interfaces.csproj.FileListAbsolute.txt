@@ -1,0 +1,5 @@
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.Interfaces\bin\Debug\HealthView.Interfaces.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.Interfaces\bin\Debug\HealthView.Interfaces.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.Interfaces\obj\Debug\HealthView.Interfaces.csprojResolveAssemblyReference.cache
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.Interfaces\obj\Debug\HealthView.Interfaces.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.Interfaces\obj\Debug\HealthView.Interfaces.pdb

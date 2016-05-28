@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using CBT.DataLayer.Interfaces;
-using LoggingService;
+using HealthView.DataLayer;
+using HealthView.DataLayer.Interfaces;
 
-namespace CBT.DataLayer.BaseRepo
+namespace HealthView.DataLayer.BaseRepo
 {
     public class BaseRepoWithSinglePk<T> : BaseRepo<T>
     where T : class, IDataAccesObjectWithSinglePk, new()
     {
-        public BaseRepoWithSinglePk(Entities context) : base(context)
+        public BaseRepoWithSinglePk(IP_DatabaseEntities context) : base(context)
         {
         }
 
@@ -32,7 +30,7 @@ namespace CBT.DataLayer.BaseRepo
             var entity = await mDbSet.FindAsync(id);
             if (entity == null)
             {
-                LogHelper.LogInfo("Attempted to remove entity which does not exist in the database");
+                //LogHelper.LogInfo("Attempted to remove entity which does not exist in the database");
                 return;
             }
             await DeleteAsync(entity);
@@ -43,7 +41,7 @@ namespace CBT.DataLayer.BaseRepo
             var entity = await mDbSet.FindAsync(id);
             if (entity == null)
             {
-                LogHelper.LogInfo("Attempted to mark entity which does not exist in the database");
+                //LogHelper.LogInfo("Attempted to mark entity which does not exist in the database");
                 return null;
             }
             var entityWithStatus = (IDataAccesObjectWithStatus) entity;

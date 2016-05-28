@@ -52,9 +52,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HeartModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Identitate.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Interfaces\IModel.cs" />
+    <Compile Include="Interfaces\IModelWithSinglePK.cs" />
+    <Compile Include="Interfaces\IModelWithStatus.cs" />
     <Compile Include="Pacienti.cs">
       <DependentUpon>HeartModel.tt</DependentUpon>
     </Compile>

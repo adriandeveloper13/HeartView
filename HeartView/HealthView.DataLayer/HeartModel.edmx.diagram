@@ -4,17 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="33dc1a5789b4429dabcde072c238e6a0" Name="Diagram1">
-        <EntityTypeShape EntityType="IP_DatabaseModel.ActivitatePacienti" Width="1.5" PointX="7" PointY="2.875" />
-        <EntityTypeShape EntityType="IP_DatabaseModel.Doctori" Width="1.5" PointX="0.75" PointY="4.25" />
-        <EntityTypeShape EntityType="IP_DatabaseModel.Identitate" Width="1.5" PointX="0.75" PointY="7.625" />
-        <EntityTypeShape EntityType="IP_DatabaseModel.Pacienti" Width="1.5" PointX="4" PointY="3.5" />
-        <EntityTypeShape EntityType="IP_DatabaseModel.Recomandari" Width="1.5" PointX="7" PointY="7" />
-        <AssociationConnector Association="IP_DatabaseModel.FK_ActivitatePacienti_0" />
-        <AssociationConnector Association="IP_DatabaseModel.FK_Identitate_0" />
-        <AssociationConnector Association="IP_DatabaseModel.FK_Pacienti_0" />
-        <AssociationConnector Association="IP_DatabaseModel.FK_Identitate_1" />
-        <AssociationConnector Association="IP_DatabaseModel.FK_Recomandari_0" />
+      <Diagram DiagramId="5e994febc16e4d51bbfe06b9909c70fc" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="HeartModel.ActivitatePacienti" Width="1.5" PointX="1.875" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeartModel.Doctori" Width="1.5" PointX="6" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeartModel.Pacienti" Width="1.5" PointX="5.875" PointY="10.25" IsExpanded="true" />
+        <AssociationConnector Association="HeartModel.FK_ActivitatePacienti_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="HeartModel.FK_ActivitatePacienti_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="HeartModel.FK_Pacienti_01" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HeartModel.Recomandari" Width="1.5" PointX="11" PointY="9.5" />
+        <AssociationConnector Association="HeartModel.FK_Pacienti_0" />
+        <AssociationConnector Association="HeartModel.FK_Recomandari_ToTable" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

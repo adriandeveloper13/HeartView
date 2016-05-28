@@ -1,7 +1,7 @@
 ﻿using System;
 using HealthView.DataLayer;
 
-namespace CBT.DataLayer
+namespace HealthView.DataLayer
 {
     public abstract class DataRepository : IDisposable
     {

@@ -12,14 +12,16 @@ namespace HealthView.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Recomandari : Interfaces.IModel
+    public partial class Recomandari:Interfaces.IModel
     {
-        public System.Guid IDRecomandare { get; set; }
+        public System.Guid ID { get; set; }
         public System.Guid IDPacient { get; set; }
         public string TipRecomandare { get; set; }
-        public decimal Durata { get; set; }
+        public Nullable<decimal> Durata { get; set; }
         public string AlteIndicatii { get; set; }
+        public System.Guid IDDoctor { get; set; }
     
+        public virtual Doctori Doctori { get; set; }
         public virtual Pacienti Pacienti { get; set; }
     }
 }

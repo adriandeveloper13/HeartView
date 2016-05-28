@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CBT.DataLayer.Interfaces
+namespace HealthView.DataLayer.Interfaces
 {
 	public interface IDataAccesObjectWithStatus : IDataAccesObject
     {

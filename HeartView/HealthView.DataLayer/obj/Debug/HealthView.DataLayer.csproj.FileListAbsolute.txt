@@ -1,1 +1,2 @@
 D:\PROIECT IP\HeartView\HealthView.DataLayer\obj\Debug\HealthView.DataLayer.csprojResolveAssemblyReference.cache
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\obj\Debug\HealthView.DataLayer.csprojResolveAssemblyReference.cache

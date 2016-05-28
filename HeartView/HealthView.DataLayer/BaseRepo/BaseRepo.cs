@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using CBT.DataLayer.Interfaces;
-using HealthView.DataLayer;
+using HealthView.DataLayer.Interfaces;
 
-namespace CBT.DataLayer.BaseRepo
+namespace HealthView.DataLayer.BaseRepo
 {
     public abstract class BaseRepo<T> : GenericDataRepository<T>
     where T : class, IDataAccesObject

@@ -12,13 +12,12 @@ namespace HealthView.DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Pacienti:Interfaces.IModel
+    public partial class Pacienti:Interfaces.IDataAccesObject
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pacienti()
         {
             this.ActivitatePacienti = new HashSet<ActivitatePacienti>();
-            this.Identitate = new HashSet<Identitate>();
             this.Recomandari = new HashSet<Recomandari>();
         }
     
@@ -33,12 +32,12 @@ namespace HealthView.DataLayer
         public System.Guid IDPacient { get; set; }
         public string Status { get; set; }
         public System.Guid IDDoctor { get; set; }
+        public string BadgeCode { get; set; }
+        public string AspNetUserId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ActivitatePacienti> ActivitatePacienti { get; set; }
         public virtual Doctori Doctori { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Identitate> Identitate { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recomandari> Recomandari { get; set; }
     }

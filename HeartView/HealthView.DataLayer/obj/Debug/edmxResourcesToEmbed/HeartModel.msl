@@ -1,67 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="IP_DatabaseModelStoreContainer" CdmEntityContainer="IP_DatabaseEntities">
+  <EntityContainerMapping StorageEntityContainer="HeartModelStoreContainer" CdmEntityContainer="Entities">
     <EntitySetMapping Name="ActivitatePacienti">
-      <EntityTypeMapping TypeName="IP_DatabaseModel.ActivitatePacienti">
+      <EntityTypeMapping TypeName="HeartModel.ActivitatePacienti">
         <MappingFragment StoreEntitySet="ActivitatePacienti">
-          <ScalarProperty Name="IDPacient" ColumnName="IDPacient" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="DataMasurarii" ColumnName="DataMasurarii" />
-          <ScalarProperty Name="EKG" ColumnName="EKG" />
+          <ScalarProperty Name="IDRecomandare" ColumnName="IDRecomandare" />
+          <ScalarProperty Name="C__createdAt" ColumnName="__createdAt" />
+          <ScalarProperty Name="C__updatedAt" ColumnName="__updatedAt" />
+          <ScalarProperty Name="C__version" ColumnName="__version" />
+          <ScalarProperty Name="C__deleted" ColumnName="__deleted" />
           <ScalarProperty Name="Umiditate" ColumnName="Umiditate" />
-          <ScalarProperty Name="Temperatura" ColumnName="Temperatura" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="SenzorEKG" ColumnName="SenzorEKG" />
+          <ScalarProperty Name="IDPacient" ColumnName="IDPacient" />
           <ScalarProperty Name="Puls" ColumnName="Puls" />
-          <ScalarProperty Name="IDActivitate" ColumnName="IDActivitate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Temperatura" ColumnName="Temperatura" />
+          <ScalarProperty Name="complete" ColumnName="complete" />
+          <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Doctori">
-      <EntityTypeMapping TypeName="IP_DatabaseModel.Doctori">
+      <EntityTypeMapping TypeName="HeartModel.Doctori">
         <MappingFragment StoreEntitySet="Doctori">
-          <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Spital" ColumnName="Spital" />
-          <ScalarProperty Name="Functie" ColumnName="Functie" />
-          <ScalarProperty Name="PrenumeDoctor" ColumnName="PrenumeDoctor" />
           <ScalarProperty Name="NumeDoctor" ColumnName="NumeDoctor" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Identitate">
-      <EntityTypeMapping TypeName="IP_DatabaseModel.Identitate">
-        <MappingFragment StoreEntitySet="Identitate">
-          <ScalarProperty Name="Rol" ColumnName="Rol" />
-          <ScalarProperty Name="Parola" ColumnName="Parola" />
-          <ScalarProperty Name="Utilizator" ColumnName="Utilizator" />
-          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+          <ScalarProperty Name="PrenumeDoctor" ColumnName="PrenumeDoctor" />
+          <ScalarProperty Name="Functie" ColumnName="Functie" />
+          <ScalarProperty Name="Spital" ColumnName="Spital" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
+          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Pacienti">
-      <EntityTypeMapping TypeName="IP_DatabaseModel.Pacienti">
+      <EntityTypeMapping TypeName="HeartModel.Pacienti">
         <MappingFragment StoreEntitySet="Pacienti">
-          <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="IDPacient" ColumnName="IDPacient" />
-          <ScalarProperty Name="Ocupatie" ColumnName="Ocupatie" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
-          <ScalarProperty Name="Varsta" ColumnName="Varsta" />
-          <ScalarProperty Name="CNP" ColumnName="CNP" />
-          <ScalarProperty Name="PrenumePacient" ColumnName="PrenumePacient" />
           <ScalarProperty Name="NumePacient" ColumnName="NumePacient" />
+          <ScalarProperty Name="PrenumePacient" ColumnName="PrenumePacient" />
+          <ScalarProperty Name="CNP" ColumnName="CNP" />
+          <ScalarProperty Name="Varsta" ColumnName="Varsta" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Ocupatie" ColumnName="Ocupatie" />
+          <ScalarProperty Name="IDPacient" ColumnName="IDPacient" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
+          <ScalarProperty Name="BadgeCode" ColumnName="BadgeCode" />
+          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Recomandari">
-      <EntityTypeMapping TypeName="IP_DatabaseModel.Recomandari">
+      <EntityTypeMapping TypeName="HeartModel.Recomandari">
         <MappingFragment StoreEntitySet="Recomandari">
+          <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
           <ScalarProperty Name="AlteIndicatii" ColumnName="AlteIndicatii" />
           <ScalarProperty Name="Durata" ColumnName="Durata" />
           <ScalarProperty Name="TipRecomandare" ColumnName="TipRecomandare" />
           <ScalarProperty Name="IDPacient" ColumnName="IDPacient" />
-          <ScalarProperty Name="IDRecomandare" ColumnName="IDRecomandare" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

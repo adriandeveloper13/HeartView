@@ -1,1 +1,2 @@
 D:\PROIECT IP\HeartView\HealthView.BusinessLogic\obj\Debug\HealthView.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\obj\Debug\HealthView.BusinessLogic.csprojResolveAssemblyReference.cache

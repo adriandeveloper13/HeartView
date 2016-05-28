@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
-using CBT.DataLayer.Interfaces;
-using HealthView.DataLayer;
+using HealthView.DataLayer.Interfaces;
 
-namespace CBT.DataLayer
+namespace HealthView.DataLayer
 {
     public class GenericDataRepository<T> : DataRepository
         where T : class, IDataAccesObject
