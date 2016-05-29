@@ -3,3 +3,5 @@ D:\PROIECT IP\HeartViewRepository\HeartView\LoggingService\bin\Debug\LoggingServ
 D:\PROIECT IP\HeartViewRepository\HeartView\LoggingService\obj\Debug\LoggingService.csprojResolveAssemblyReference.cache
 D:\PROIECT IP\HeartViewRepository\HeartView\LoggingService\obj\Debug\LoggingService.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\LoggingService\obj\Debug\LoggingService.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\LoggingService\bin\Debug\NLog.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\LoggingService\bin\Debug\NLog.xml

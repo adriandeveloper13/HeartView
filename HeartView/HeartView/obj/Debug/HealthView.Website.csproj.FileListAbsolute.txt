@@ -75,3 +75,6 @@ D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\Microsoft.AI.WindowsSe
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\Microsoft.ApplicationInsights.xml
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\CustomMembership.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\CustomMembership.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\obj\Debug\HeartView.Migrations.InitialCreate.resources
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\obj\Debug\HealthView.Website.csproj.GenerateResource.Cache
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\obj\Debug\HeartView.Migrations.BadgeCode.resources

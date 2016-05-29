@@ -38,6 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="HealthView.DataLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\HealthView.DataLayer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -55,9 +59,6 @@
       <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetRoles.cs">
-      <DependentUpon>HealthModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserLogins.cs">
       <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetUsers.cs">
@@ -92,6 +93,7 @@
     <Compile Include="Interfaces\IDataAccesObjectWithSinglePK.cs" />
     <Compile Include="Interfaces\IDataAccesObjectWithSinglePKAndStatus.cs" />
     <Compile Include="Interfaces\IDataAccesObjectWithStatus.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pacienti.cs">
       <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>

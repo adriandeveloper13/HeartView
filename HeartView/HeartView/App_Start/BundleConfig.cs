@@ -26,6 +26,14 @@ namespace HeartView
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/doctorScript").Include(
+                "~/Scripts/Custom/doctorModule.js"));
+            bundles.Add(new ScriptBundle("~/bundles/commonScript").Include(
+                "~/Scripts/Custom/commonModule.js",
+                "~/Scripts/Custom/ajaxHelper.js"));
+
         }
     }
 }

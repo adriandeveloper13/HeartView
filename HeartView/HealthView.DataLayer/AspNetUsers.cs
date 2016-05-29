@@ -17,7 +17,6 @@ namespace HealthView.DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AspNetUsers()
         {
-            this.AspNetUserLogins = new HashSet<AspNetUserLogins>();
             this.Doctori = new HashSet<Doctori>();
             this.Pacienti = new HashSet<Pacienti>();
             this.AspNetRoles = new HashSet<AspNetRoles>();
@@ -36,8 +35,6 @@ namespace HealthView.DataLayer
         public int AccessFailedCount { get; set; }
         public string UserName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetUserLogins> AspNetUserLogins { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Doctori> Doctori { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

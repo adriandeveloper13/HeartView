@@ -47,6 +47,7 @@ namespace HealthView.BusinessLogic.TypeManagement
                 });
 
             config.CreateMap<DataLayer.AspNetUsers, AspNetUsers>()
+                .ForMember(member => member.BadgeCode, opt => opt.Ignore())
                 .BeforeMap((source, destination) =>
                 {
                     source.Doctori.Configure(doctor => { doctor.AspNetUsers = null; });

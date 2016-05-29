@@ -46,9 +46,6 @@
     <Compile Include="AspNetRoles.cs">
       <DependentUpon>HeartModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AspNetUserLogins.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="AspNetUsers.cs">
       <DependentUpon>HeartModel.tt</DependentUpon>
     </Compile>

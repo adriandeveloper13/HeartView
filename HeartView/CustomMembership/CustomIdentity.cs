@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace CustomMembership
     {
         #region from interface
 
-        public string Name => IsAuthenticated ? Email : null;
+        public string Name => IsAuthenticated ? UserName : null;
 
         public string AuthenticationType => "Custom";
 
@@ -19,17 +20,18 @@ namespace CustomMembership
 
         #endregion
 
+
         #region custom fields
 
         public Guid Id { get; set; }
         public string AspNetUserId { get; set; }
         public Guid IDPacient { get; set; }
-        public Guid IDActivitate { get; set; }       
+        public Guid IDActivitate { get; set; }
         public Guid IDRecomandare { get; set; }
 
         public string NumePacient { get; set; }
         public string PrenumePacient { get; set; }
-
+        public string UserName { get; set; }
         public string CNPpacient { get; set; }
         public string Varsta { get; set; }
         public string Adresa { get; set; }

@@ -182,6 +182,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605282047202_InitialCreate.cs" />
+    <Compile Include="Migrations\201605282047202_InitialCreate.Designer.cs">
+      <DependentUpon>201605282047202_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605291450067_BadgeCode.cs" />
+    <Compile Include="Migrations\201605291450067_BadgeCode.Designer.cs">
+      <DependentUpon>201605291450067_BadgeCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -197,12 +206,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\Custom\ajaxHelper.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Custom\commonModule.js" />
+    <Content Include="Scripts\Custom\doctorModule.js" />
+    <Content Include="Scripts\Custom\pacientModule.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -270,7 +283,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomMembership\CustomMembership.csproj">
-      <Project>{E9A949B0-709F-425D-991E-F8339BE7F6C2}</Project>
+      <Project>{C05334F1-2D50-4E50-889C-210847BF88B8}</Project>
       <Name>CustomMembership</Name>
     </ProjectReference>
     <ProjectReference Include="..\HealthView.BusinessLogic\HealthView.BusinessLogic.csproj">
@@ -285,6 +298,14 @@
       <Project>{8aaa2582-eaf1-49c8-9fa1-3d3e826bf680}</Project>
       <Name>HealthView.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605282047202_InitialCreate.resx">
+      <DependentUpon>201605282047202_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605291450067_BadgeCode.resx">
+      <DependentUpon>201605291450067_BadgeCode.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

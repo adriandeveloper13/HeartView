@@ -1,5 +1,10 @@
 D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\bin\Debug\CustomMembership.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\bin\Debug\CustomMembership.pdb
-D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\obj\Debug\CustomMembership.csprojResolveAssemblyReference.cache
 D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\obj\Debug\CustomMembership.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\obj\Debug\CustomMembership.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\bin\Debug\CustomMembership.dll.config
+D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\bin\Debug\EntityFramework.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\bin\Debug\EntityFramework.SqlServer.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\bin\Debug\EntityFramework.xml
+D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\bin\Debug\EntityFramework.SqlServer.xml
+D:\PROIECT IP\HeartViewRepository\HeartView\CustomMembership\obj\Debug\CustomMembership.csprojResolveAssemblyReference.cache

@@ -151,7 +151,7 @@ namespace HeartView.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, BadgeCode = model.BadgeCode };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -163,7 +163,16 @@ namespace HeartView.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    if (model.BadgeCode == "1234")
+                    {
+                        //informatii aditionale doctor
+                        return RedirectToAction("Create", "Doctori", new {aspNetUserId = user.Id});
+                    }
+                    else
+                    {
+                        //informatii aditionale pacient
+                        return RedirectToAction("Create", "Pacienti");
+                    }
                 }
                 AddErrors(result);
             }

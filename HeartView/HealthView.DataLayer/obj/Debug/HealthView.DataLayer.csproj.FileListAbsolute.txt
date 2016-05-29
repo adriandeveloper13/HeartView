@@ -1,7 +1,6 @@
 D:\PROIECT IP\HeartView\HealthView.DataLayer\obj\Debug\HealthView.DataLayer.csprojResolveAssemblyReference.cache
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\obj\Debug\HealthView.DataLayer.csprojResolveAssemblyReference.cache
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\HealthView.DataLayer.dll.config
-D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\HealthView.DataLayer.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\HealthView.DataLayer.pdb
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\EntityFramework.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\EntityFramework.SqlServer.dll

@@ -1,7 +1,6 @@
 D:\PROIECT IP\HeartView\HealthView.BusinessLogic\obj\Debug\HealthView.BusinessLogic.csprojResolveAssemblyReference.cache
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\obj\Debug\HealthView.BusinessLogic.csprojResolveAssemblyReference.cache
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\HealthView.BusinessLogic.dll.config
-D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\HealthView.BusinessLogic.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\HealthView.BusinessLogic.pdb
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\AutoMapper.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\EntityFramework.dll
@@ -19,3 +18,5 @@ D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\E
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\obj\Debug\HealthView.BusinessLogic.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\obj\Debug\HealthView.BusinessLogic.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\NLog.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\NLog.xml

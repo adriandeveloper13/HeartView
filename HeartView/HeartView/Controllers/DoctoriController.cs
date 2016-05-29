@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using CustomMembership;
@@ -34,8 +35,9 @@ namespace HeartView.Controllers
             return View(doctoriList);
         }
         // GET: Doctori/Create
-        public virtual ActionResult Create()
+        public virtual ActionResult Create(Guid aspNetUserId)
         {
+            ViewBag.AspNetUserId = aspNetUserId;
             return View();
         }
 
@@ -52,14 +54,14 @@ namespace HeartView.Controllers
                     Functie = doctorModel.Functie,
                     Spital = doctorModel.Spital,
                     Status = doctorModel.Status,
-                    AspNetUserId = ((CustomIdentity) User.Identity).AspNetUserId
+                    AspNetUserId = doctorModel.AspNetUserId
                 };
 
                 var doctor = await DoctoriCore.Instance().CreateAsync(prepareDoctorModel);
 
                 return Json(doctor);
             }
-            catch
+            catch(Exception ex)
             {
                 return Json(null);
             }
