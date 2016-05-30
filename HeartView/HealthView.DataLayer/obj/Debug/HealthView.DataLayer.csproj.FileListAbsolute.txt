@@ -8,3 +8,9 @@ D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\Entit
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\obj\Debug\HealthView.DataLayer.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\obj\Debug\HealthView.DataLayer.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\HealthView.Models.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\LoggingService.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\NLog.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\HealthView.Models.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\LoggingService.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.DataLayer\bin\Debug\NLog.xml

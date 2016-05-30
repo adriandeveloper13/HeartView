@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using HealthView.BusinessLogic.BaseCore;
 using HealthView.BusinessLogic.TypeManagement;
 using HealthView.DataLayer.BaseRepo;
 using HealthView.Models.Interfaces;
+using LoggingService;
 using HealthView.DataLayer.Interfaces;
 
 namespace HealthView.BusinessLogic.BaseCore
 {
     public abstract class BaseCoreWithSinglePk<T, U> : BaseCore<T, U>
-                      where T : class, IModelWithSinglePK, new()
-                      where U : class, IDataAccesObjectWithSinglePk, new()
+                    where T : class, IModelWithSinglePK, new()
+                    where U : class, IDataAccesObjectWithSinglePk, new()
     {
         public async Task<T> CreateAsync(T model, IList<string> navigationProperties = null)
         {
@@ -26,7 +28,7 @@ namespace HealthView.BusinessLogic.BaseCore
                 dataLayerModel = await repoInstance.CreateAsync(dataLayerModel, navigationProperties);
                 if (dataLayerModel == null)
                 {
-                    //LogHelper.LogException("The entity could not be created");
+                    LogHelper.LogException("The entity could not be created");
                     return null;
                 }
                 return dataLayerModel.CopyTo<T>();
@@ -37,7 +39,7 @@ namespace HealthView.BusinessLogic.BaseCore
         {
             if (model.Id == Guid.Empty)
             {
-                //LogHelper.LogInfo("Attempted to update entity with empty Id");
+                LogHelper.LogInfo("Attempted to update entity with empty Id");
                 return null;
             }
 
@@ -46,13 +48,13 @@ namespace HealthView.BusinessLogic.BaseCore
                 var dataLayerModel = model.CopyTo<U>();
                 if (model.Id == Guid.Empty)
                 {
-                    //LogHelper.LogInfo("Attempted to update entity with empty Id");
+                    LogHelper.LogInfo("Attempted to update entity with empty Id");
                     return null;
                 }
                 var updatedModel = await repoInstance.UpdateAsync(dataLayerModel, navigationProperties);
                 if (updatedModel == null)
                 {
-                    //LogHelper.LogException("The entity could not be updated");
+                    LogHelper.LogException("The entity could not be updated");
                     return null;
                 }
                 return updatedModel.CopyTo<T>();
@@ -63,7 +65,7 @@ namespace HealthView.BusinessLogic.BaseCore
         {
             if (id == Guid.Empty)
             {
-                //LogHelper.LogInfo("Attempted to remove entity with empty Id");
+                LogHelper.LogInfo("Attempted to remove entity with empty Id");
                 return;
             }
             using (var repoInstance = GetRepoInstance())
@@ -76,7 +78,7 @@ namespace HealthView.BusinessLogic.BaseCore
         {
             if (id == Guid.Empty)
             {
-                //LogHelper.LogInfo("Attempted to mark entity with empty Id");
+                LogHelper.LogInfo("Attempted to mark entity with empty Id");
                 return null;
             }
             using (var repoInstance = GetRepoInstance())
@@ -85,7 +87,7 @@ namespace HealthView.BusinessLogic.BaseCore
                 var result = await singlePKRepo.MarkAsync(id, status);
                 if (result == null)
                 {
-                    //LogHelper.LogException("The entity could not be marked");
+                    LogHelper.LogException("The entity could not be marked");
                     return null;
                 }
                 return result.CopyTo<T>();
@@ -119,4 +121,3 @@ namespace HealthView.BusinessLogic.BaseCore
         #endregion
     }
 }
-

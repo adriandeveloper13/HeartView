@@ -47,17 +47,17 @@ namespace HeartView.Controllers
         {
             try
             {
-                var prepareDoctorModel = new Doctori
-                {
-                    NumeDoctor = doctorModel.NumeDoctor,
-                    PrenumeDoctor = doctorModel.PrenumeDoctor,
-                    Functie = doctorModel.Functie,
-                    Spital = doctorModel.Spital,
-                    Status = doctorModel.Status,
-                    AspNetUserId = doctorModel.AspNetUserId
-                };
+                //var prepareDoctorModel = new Doctori
+                //{
+                //    NumeDoctor = doctorModel.NumeDoctor,
+                //    PrenumeDoctor = doctorModel.PrenumeDoctor,
+                //    Functie = doctorModel.Functie,
+                //    Spital = doctorModel.Spital,
+                //    Status = doctorModel.Status,
+                //    AspNetUserId = doctorModel.AspNetUserId
+                //};
 
-                var doctor = await DoctoriCore.Instance().CreateAsync(prepareDoctorModel);
+                var doctor = await DoctoriCore.Instance().CreateAsync(doctorModel);
 
                 return Json(doctor);
             }

@@ -40,12 +40,17 @@ namespace HealthView.DataLayer.Repositories
 
         public async Task<IList<Doctori>> GetAllByGroupIdAsync(Guid pacientId, IList<string> navigationProperties = null)
         {
-            return await GetListAsync(user => user.Pacienti.Any(pacienti => pacienti.IDPacient == pacientId), navigationProperties);
+            return await GetListAsync(user => user.Pacienti.Any(pacienti => pacienti.Id == pacientId), navigationProperties);
         }
 
         public async Task<IList<Doctori>> ListAsync()
         {
-            return await base.ListAllAsync();
+            return await base.GetAllAsync();
+        }
+
+        public async Task<IList<Doctori>> GetAllByAspNetUserIdAsync(Guid aspNetUserId, IList<string> navigationProperties = null)
+        {
+            return await GetListAsync(doctor => doctor.AspNetUserId == aspNetUserId.ToString(), navigationProperties);
         }
     }
 }

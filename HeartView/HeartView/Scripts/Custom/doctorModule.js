@@ -6,7 +6,7 @@
         return postData;
     }
 
-    function create(aspNetUsetId) {
+    function create(aspNetUserId) {
         debugger;
 
         //var result = commonModule.validateForm("save-doctor");
@@ -15,12 +15,12 @@
         //}
 
         var postData = setPostData();
-        postData.append("AspNetUserId", aspNetUsetId);
+        postData.append("AspNetUserId", aspNetUserId);
 
         ajaxHelper.postFile("/Doctori/Create", postData, function (data) {
                 debugger;
                 if (commonModule.isDataValid(data)) {
-                    commonModule.navigate("/Home/Index");
+                    commonModule.navigate("/Pacienti/Listare?doctorId=" +data.Id );
                 } else {
                     commonModule.navigate("/Home/About");
                 }

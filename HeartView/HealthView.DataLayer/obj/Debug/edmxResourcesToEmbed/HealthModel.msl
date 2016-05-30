@@ -17,7 +17,7 @@
           <ScalarProperty Name="C__version" ColumnName="__version" />
           <ScalarProperty Name="C__updatedAt" ColumnName="__updatedAt" />
           <ScalarProperty Name="C__createdAt" ColumnName="__createdAt" />
-          <ScalarProperty Name="IDRecomandare" ColumnName="IDRecomandare" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -41,41 +41,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Doctori">
-      <EntityTypeMapping TypeName="HealthModel.Doctori">
-        <MappingFragment StoreEntitySet="Doctori">
-          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Spital" ColumnName="Spital" />
-          <ScalarProperty Name="Functie" ColumnName="Functie" />
-          <ScalarProperty Name="PrenumeDoctor" ColumnName="PrenumeDoctor" />
-          <ScalarProperty Name="NumeDoctor" ColumnName="NumeDoctor" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Pacienti">
-      <EntityTypeMapping TypeName="HealthModel.Pacienti">
-        <MappingFragment StoreEntitySet="Pacienti">
-          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
-          <ScalarProperty Name="BadgeCode" ColumnName="BadgeCode" />
-          <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="IDPacient" ColumnName="IDPacient" />
-          <ScalarProperty Name="Ocupatie" ColumnName="Ocupatie" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
-          <ScalarProperty Name="Varsta" ColumnName="Varsta" />
-          <ScalarProperty Name="CNP" ColumnName="CNP" />
-          <ScalarProperty Name="PrenumePacient" ColumnName="PrenumePacient" />
-          <ScalarProperty Name="NumePacient" ColumnName="NumePacient" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="AspNetUsers">
       <EntityTypeMapping TypeName="HealthModel.AspNetUsers">
         <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="BadgeCode" ColumnName="BadgeCode" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
           <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
@@ -99,5 +68,35 @@
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Doctori">
+      <EntityTypeMapping TypeName="HealthModel.Doctori">
+        <MappingFragment StoreEntitySet="Doctori">
+          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Spital" ColumnName="Spital" />
+          <ScalarProperty Name="Functie" ColumnName="Functie" />
+          <ScalarProperty Name="PrenumeDoctor" ColumnName="PrenumeDoctor" />
+          <ScalarProperty Name="NumeDoctor" ColumnName="NumeDoctor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacienti">
+      <EntityTypeMapping TypeName="HealthModel.Pacienti">
+        <MappingFragment StoreEntitySet="Pacienti">
+          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
+          <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ocupatie" ColumnName="Ocupatie" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Varsta" ColumnName="Varsta" />
+          <ScalarProperty Name="CNP" ColumnName="CNP" />
+          <ScalarProperty Name="PrenumePacient" ColumnName="PrenumePacient" />
+          <ScalarProperty Name="NumePacient" ColumnName="NumePacient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

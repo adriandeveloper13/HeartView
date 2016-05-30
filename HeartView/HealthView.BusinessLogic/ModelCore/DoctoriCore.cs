@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using DataLayer.Helpers;
+using DataLayer.StoreProcedures;
 using HealthView.BusinessLogic.BaseCore;
 using HealthView.BusinessLogic.TypeManagement;
 using HealthView.DataLayer;
 using HealthView.DataLayer.BaseRepo;
 using HealthView.DataLayer.Repositories;
+using HealthView.Interfaces;
+using LoggingService;
 using Doctori = HealthView.Models.Doctori;
 
 namespace HealthView.BusinessLogic.ModelCore
@@ -65,5 +69,35 @@ namespace HealthView.BusinessLogic.ModelCore
         //    }
         //}
 
+        public async Task<IList<Doctori>> GetByAspNetUserId(Guid aspNetUserId)
+        {
+            using (var doctoriRepository = (DoctoriRepository) GetRepoInstance())
+            {
+                var doctori = await doctoriRepository.GetAllByAspNetUserIdAsync(aspNetUserId);
+                if (doctori == null || doctori.Count == 0)
+                {
+                    return new List<Doctori>();
+                }
+
+                return doctori.CopyTo<Doctori>();
+            }
+        }
+
+        //public List<T> GetUserIdentityData<T>(string aspNetUserId) where T : class, IUserIdentityData, new()
+        //{
+        //    var spExec = new StoredProcedureExecutor();
+        //    StoredProcedureBase getUserIdentityData = new User_Get_Identity_Data_SP(aspNetUserId);
+        //    OperationStatus status = null;
+        //    var userIdentityData = spExec.GetMultipleSetResult<T>(getUserIdentityData, out status);
+        //    if (status != null && !status.Error)
+        //    {
+        //        return userIdentityData;
+        //    }
+        //    if (status != null)
+        //    {
+        //        LogHelper.LogInfo<UserCore>($"failed at GetUserIdentityData with errorCode {status.ErrorCode}");
+        //    }
+        //    return userIdentityData;
+        //}
     }
 }

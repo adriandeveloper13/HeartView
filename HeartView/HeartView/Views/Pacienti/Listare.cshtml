@@ -1,0 +1,84 @@
+﻿@model IEnumerable<HealthView.Models.Pacienti>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pacienti</title>
+    <link rel="stylesheet" href="~/Content/Custom/style.css">
+</head>
+
+<body>
+    <div class="table-title">
+        <h2>Pacienti</h2>
+    </div>
+      <a href="/Account/Register" class="myButton"> Inregistrare pacient</a>
+
+<table class="table table-fill">
+    <thead>
+        <tr>
+            <th class="text-left">
+                @Html.DisplayNameFor(model => model.NumePacient)
+            </th>
+            <th class="text-left">
+                @Html.DisplayNameFor(model => model.PrenumePacient)
+            </th>
+            <th class="text-left">
+                @Html.DisplayNameFor(model => model.CNP)
+            </th>
+            <th class="text-left">
+                @Html.DisplayNameFor(model => model.Varsta)
+            </th>
+            <th class="text-left">
+                @Html.DisplayNameFor(model => model.Adresa)
+            </th>
+            <th class="text-left">
+                @Html.DisplayNameFor(model => model.Telefon)
+            </th>
+            <th class="text-left">
+                @Html.DisplayNameFor(model => model.Ocupatie)
+            </th>
+            <th class="text-left">
+                Actiuni
+            </th>
+
+        </tr>
+    </thead>
+    <tbody class="table-hover"></tbody>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumePacient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrenumePacient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Varsta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ocupatie)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+                @Html.ActionLink("Details", "Details", new {id = item.Id}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+            </td>
+        </tr>
+    }
+
+</table>
+</body>
+</html>

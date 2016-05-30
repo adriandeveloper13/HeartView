@@ -102,6 +102,7 @@
       <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\DoctoriRepository.cs" />
+    <Compile Include="Repositories\PacientiRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -128,6 +129,16 @@
       <DependentUpon>HealthModel.edmx</DependentUpon>
       <LastGenOutput>HealthModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HealthView.Models\HealthView.Models.csproj">
+      <Project>{8AAA2582-EAF1-49C8-9FA1-3D3E826BF680}</Project>
+      <Name>HealthView.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoggingService\LoggingService.csproj">
+      <Project>{E23996DF-E12A-4823-B807-2F63B0A1A1CF}</Project>
+      <Name>LoggingService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

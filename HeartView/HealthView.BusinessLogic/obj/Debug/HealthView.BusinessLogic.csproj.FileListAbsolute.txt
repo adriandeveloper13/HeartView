@@ -20,3 +20,7 @@ D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\obj\Debug\H
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\obj\Debug\HealthView.BusinessLogic.pdb
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\NLog.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\NLog.xml
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\DataLayer.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\DataLayer.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\HealthView.BusinessLogic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml

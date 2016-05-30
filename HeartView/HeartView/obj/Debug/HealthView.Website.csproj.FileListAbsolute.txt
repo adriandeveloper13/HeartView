@@ -78,3 +78,9 @@ D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\CustomMembership.pdb
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\obj\Debug\HeartView.Migrations.InitialCreate.resources
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\obj\Debug\HealthView.Website.csproj.GenerateResource.Cache
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\obj\Debug\HeartView.Migrations.BadgeCode.resources
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\LoggingService.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\NLog.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\LoggingService.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\NLog.xml
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\HealthView.Interfaces.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\HealthView.Interfaces.pdb

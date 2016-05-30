@@ -1,8 +1,8 @@
-﻿using System;
+﻿using HealthView.DataLayer.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using HealthView.DataLayer;
-using HealthView.DataLayer.Interfaces;
+using LoggingService;
 
 namespace HealthView.DataLayer.BaseRepo
 {
@@ -25,26 +25,15 @@ namespace HealthView.DataLayer.BaseRepo
             return await GetAsync(model.Id, navigationProperties);
         }
 
-        public async Task RemoveAsync(Guid id)
-        {
-            var entity = await mDbSet.FindAsync(id);
-            if (entity == null)
-            {
-                //LogHelper.LogInfo("Attempted to remove entity which does not exist in the database");
-                return;
-            }
-            await DeleteAsync(entity);
-        }
-
         public async Task<T> MarkAsync(Guid id, int status)
         {
             var entity = await mDbSet.FindAsync(id);
             if (entity == null)
             {
-                //LogHelper.LogInfo("Attempted to mark entity which does not exist in the database");
+                LogHelper.LogInfo("Attempted to mark entity which does not exist in the database");
                 return null;
             }
-            var entityWithStatus = (IDataAccesObjectWithStatus) entity;
+            var entityWithStatus = (IDataAccesObjectWithStatus)entity;
             if (entityWithStatus == null)
             {
                 throw new Exception("entityWithStatus is not IDataAccesObjectWithStatus");
@@ -54,6 +43,17 @@ namespace HealthView.DataLayer.BaseRepo
             await UpdateAsync(entity);
 
             return await mDbSet.FindAsync(id);
+        }
+
+        public async Task RemoveAsync(Guid id)
+        {
+            var entity = await mDbSet.FindAsync(id);
+            if (entity == null)
+            {
+                LogHelper.LogInfo("Attempted to remove entity which does not exist in the database");
+                return;
+            }
+            await DeleteAsync(entity);
         }
 
         public async Task<T> GetAsync(Guid id, IList<string> navigationProperties = null)

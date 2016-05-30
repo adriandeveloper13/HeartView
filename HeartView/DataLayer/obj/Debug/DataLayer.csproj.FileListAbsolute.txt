@@ -1,0 +1,13 @@
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\DataLayer.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\DataLayer.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\LoggingService.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\NLog.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\LoggingService.pdb
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\bin\Debug\NLog.xml
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\obj\Debug\DataLayer.dll
+D:\PROIECT IP\HeartViewRepository\HeartView\DataLayer\obj\Debug\DataLayer.pdb

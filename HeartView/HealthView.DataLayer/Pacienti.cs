@@ -12,7 +12,7 @@ namespace HealthView.DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Pacienti:Interfaces.IDataAccesObject
+    public partial class Pacienti:Interfaces.IDataAccesObjectWithSinglePk
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pacienti()
@@ -27,19 +27,17 @@ namespace HealthView.DataLayer
         public int Varsta { get; set; }
         public string Adresa { get; set; }
         public decimal Telefon { get; set; }
-        public string Email { get; set; }
         public string Ocupatie { get; set; }
-        public System.Guid IDPacient { get; set; }
-        public string Status { get; set; }
+        public System.Guid Id { get; set; }
+        public  string  Status { get; set; }
         public System.Guid IDDoctor { get; set; }
-        public string BadgeCode { get; set; }
         public string AspNetUserId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ActivitatePacienti> ActivitatePacienti { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recomandari> Recomandari { get; set; }
-        public virtual Doctori Doctori { get; set; }
         public virtual AspNetUsers AspNetUsers { get; set; }
+        public virtual Doctori Doctori { get; set; }
     }
 }

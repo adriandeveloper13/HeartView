@@ -28,8 +28,8 @@ namespace HealthView.DataLayer
         public virtual DbSet<ActivitatePacienti> ActivitatePacienti { get; set; }
         public virtual DbSet<Recomandari> Recomandari { get; set; }
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Doctori> Doctori { get; set; }
         public virtual DbSet<Pacienti> Pacienti { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
     }
 }

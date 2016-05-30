@@ -178,7 +178,9 @@
     <Compile Include="Controllers\DoctoriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PacientiController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Filters\GlobalIdentityInjectorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,6 +202,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Custom\normalize.css" />
+    <Content Include="Content\Custom\style.css" />
+    <Content Include="Content\Custom\styleLogin.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -215,6 +220,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Custom\commonModule.js" />
     <Content Include="Scripts\Custom\doctorModule.js" />
+    <Content Include="Scripts\Custom\loginPage.js" />
     <Content Include="Scripts\Custom\pacientModule.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -265,6 +271,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Doctori\Listare.cshtml" />
     <Content Include="Views\Doctori\Create.cshtml" />
+    <Content Include="Views\Pacienti\Create.cshtml" />
+    <Content Include="Views\Pacienti\Listare.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -294,9 +302,17 @@
       <Project>{200f70d5-ba4b-477a-84af-03c90f155b14}</Project>
       <Name>HealthView.DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HealthView.Interfaces\HealthView.Interfaces.csproj">
+      <Project>{FC734A46-7709-43A4-8AA4-9836B1FFCE0F}</Project>
+      <Name>HealthView.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HealthView.Models\HealthView.Models.csproj">
       <Project>{8aaa2582-eaf1-49c8-9fa1-3d3e826bf680}</Project>
       <Name>HealthView.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoggingService\LoggingService.csproj">
+      <Project>{E23996DF-E12A-4823-B807-2F63B0A1A1CF}</Project>
+      <Name>LoggingService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

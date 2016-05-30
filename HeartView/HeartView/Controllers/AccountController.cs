@@ -171,7 +171,7 @@ namespace HeartView.Controllers
                     else
                     {
                         //informatii aditionale pacient
-                        return RedirectToAction("Create", "Pacienti");
+                        return RedirectToAction("Create", "Pacienti", new { aspNetUserId = user.Id});
                     }
                 }
                 AddErrors(result);

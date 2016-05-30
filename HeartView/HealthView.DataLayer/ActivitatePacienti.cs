@@ -14,7 +14,7 @@ namespace HealthView.DataLayer
     
     public partial class ActivitatePacienti:Interfaces.IDataAccesObject
     {
-        public System.Guid IDRecomandare { get; set; }
+        public System.Guid Id { get; set; }
         public Nullable<System.DateTimeOffset> C__createdAt { get; set; }
         public Nullable<System.DateTimeOffset> C__updatedAt { get; set; }
         public byte[] C__version { get; set; }
