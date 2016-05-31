@@ -62,6 +62,7 @@
     <Compile Include="BaseCore\BaseCore.cs" />
     <Compile Include="BaseCore\BaseCoreWithCompositePK.cs" />
     <Compile Include="BaseCore\BaseCoreWithSinglePk.cs" />
+    <Compile Include="ModelCore\ActivitatePacientiCore.cs" />
     <Compile Include="ModelCore\PacientiCore.cs" />
     <Compile Include="Models\UserIdentityData.cs" />
     <Compile Include="TypeManagement\DataAdapterService.cs" />

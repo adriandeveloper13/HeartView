@@ -41,41 +41,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivitatePacienti.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetRoles.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetUsers.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Doctori.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="HeartModel.cs">
+    <Compile Include="HealthModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Interfaces\IModelWithSinglePK.cs" />
     <Compile Include="Interfaces\IModelWithStatus.cs" />
     <Compile Include="Pacienti.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recomandari.cs">
-      <DependentUpon>HeartModel.tt</DependentUpon>
+      <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HeartModel.tt">
+    <Content Include="HealthModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>HeartModel.cs</LastGenOutput>
+      <LastGenOutput>HealthModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

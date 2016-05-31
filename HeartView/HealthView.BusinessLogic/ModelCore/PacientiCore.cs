@@ -33,7 +33,7 @@ namespace HealthView.BusinessLogic.ModelCore
             {
                 try
                 {
-                    var pacienti = await pacientiRepository.ListAsync();
+                    var pacienti = await pacientiRepository.ListAsync().ConfigureAwait(false);
 
                     if (pacienti == null || pacienti.Count == 0)
                     {

@@ -7,12 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using HealthView.DataLayer.Interfaces;
+
 namespace HealthView.DataLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ActivitatePacienti:Interfaces.IDataAccesObject
+    public partial class ActivitatePacienti:Interfaces.IDataAccesObject, IDataAccesObjectWithSinglePk
     {
         public System.Guid Id { get; set; }
         public Nullable<System.DateTimeOffset> C__createdAt { get; set; }

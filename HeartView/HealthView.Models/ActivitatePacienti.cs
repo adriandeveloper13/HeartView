@@ -7,12 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using HealthView.Models.Interfaces;
+
 namespace HealthView.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ActivitatePacienti:Interfaces.IModel
+    public partial class ActivitatePacienti:Interfaces.IModel, IModelWithSinglePK
     {
         public System.Guid Id { get; set; }
         public Nullable<System.DateTimeOffset> C__createdAt { get; set; }

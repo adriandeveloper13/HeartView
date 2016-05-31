@@ -7,12 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using HealthView.Models.Interfaces;
+
 namespace HealthView.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Doctori:Interfaces.IModelWithSinglePK
+    public partial class Doctori:Interfaces.IModel, IModelWithSinglePK
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Doctori()

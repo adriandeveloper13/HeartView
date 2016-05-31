@@ -53,7 +53,7 @@ namespace HealthView.DataLayer.Repositories
 
         public async Task<IList<Pacienti>> ListAsync()
         {
-            return await base.ListAllAsync();
+            return await base.ListAllAsync().ConfigureAwait(false);
         }
 
         public async Task<IList<Pacienti>> GetAllByDoctorIdAsync(Guid doctorId, IList<string> navigationProperties)

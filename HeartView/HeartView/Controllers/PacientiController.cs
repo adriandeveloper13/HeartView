@@ -51,7 +51,7 @@ namespace HeartView.Controllers
                 var doctor = await DoctoriCore.Instance().GetByAspNetUserId(aspNetUserId);
                 pacientModel.IDDoctor = doctor.First().Id;
                 pacientModel.Status = "1";
-                var pacient = await PacientiCore.Instance().CreateAsync(pacientModel);
+                var pacient = await PacientiCore.Instance().CreateAsync(pacientModel).ConfigureAwait(false);
 
                 return Json(pacient);
             }
@@ -61,11 +61,12 @@ namespace HeartView.Controllers
             }
         }
 
+        [HttpGet]
         public async Task<ActionResult> Listare(Guid doctorId)
         {
             try
             {
-                var pacienti = await PacientiCore.Instance().GetAllByDoctorId(doctorId);
+                var pacienti = await PacientiCore.Instance().GetAllByDoctorId(doctorId).ConfigureAwait(false);
 
                 if (pacienti == null)
                 {
@@ -73,12 +74,13 @@ namespace HeartView.Controllers
                 }
 
                 ViewBag.IDDoctor = doctorId;
+                ViewBag.IDPacient = pacienti.FirstOrDefault().Id;
                 return View(pacienti);
             }
             catch (Exception ex)
             {
-                    
-                throw;
+
+                return null;
             }
         }
 
