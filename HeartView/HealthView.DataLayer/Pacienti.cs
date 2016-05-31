@@ -7,12 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using HealthView.DataLayer.Interfaces;
+
 namespace HealthView.DataLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Pacienti:Interfaces.IDataAccesObjectWithSinglePk
+    public partial class Pacienti:Interfaces.IDataAccesObject, IDataAccesObjectWithSinglePk
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pacienti()
@@ -29,7 +31,7 @@ namespace HealthView.DataLayer
         public decimal Telefon { get; set; }
         public string Ocupatie { get; set; }
         public System.Guid Id { get; set; }
-        public  string  Status { get; set; }
+        public string Status { get; set; }
         public System.Guid IDDoctor { get; set; }
         public string AspNetUserId { get; set; }
     

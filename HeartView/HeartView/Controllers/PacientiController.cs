@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -47,8 +48,8 @@ namespace HeartView.Controllers
             try
             {
                 var aspNetUserId = Guid.Parse(pacientModel.AspNetUserId);
-                var doctor = DoctoriCore.Instance().GetByAspNetUserId(aspNetUserId);
-                //pacientModel.IDDoctor = doctor.Id;
+                var doctor = await DoctoriCore.Instance().GetByAspNetUserId(aspNetUserId);
+                pacientModel.IDDoctor = doctor.First().Id;
                 pacientModel.Status = "1";
                 var pacient = await PacientiCore.Instance().CreateAsync(pacientModel);
 
