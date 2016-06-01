@@ -5,80 +5,88 @@
 <head>
     <meta charset="UTF-8">
     <title>Pacienti</title>
-    <link rel="stylesheet" href="~/Content/Custom/style.css">
+    <link rel="stylesheet" href="~/Content/Custom/pacientistyle.css">
 </head>
 
 <body>
+    <div class="heart">&#x2665;</div>
     <div class="table-title">
         <h2>Pacienti</h2>
     </div>
-      <a href="/Account/Register" class="myButton"> Inregistrare pacient</a>
 
-<table class="table table-fill">
-    <thead>
-        <tr>
-            <th class="text-left">
-                @Html.DisplayNameFor(model => model.NumePacient)
-            </th>
-            <th class="text-left">
-                @Html.DisplayNameFor(model => model.PrenumePacient)
-            </th>
-            <th class="text-left">
-                @Html.DisplayNameFor(model => model.CNP)
-            </th>
-            <th class="text-left">
-                @Html.DisplayNameFor(model => model.Varsta)
-            </th>
-            <th class="text-left">
-                @Html.DisplayNameFor(model => model.Adresa)
-            </th>
-            <th class="text-left">
-                @Html.DisplayNameFor(model => model.Telefon)
-            </th>
-            <th class="text-left">
-                @Html.DisplayNameFor(model => model.Ocupatie)
-            </th>
-            <th class="text-left">
-                Actiuni
-            </th>
+    <div class="registerPacientsButton">
+        <input type="button" class="btn btn-default" style="background-color: #31A3D3" value="Inregistrare pacient" onclick="location.href = '@Url.Action("Register", "Account", new {doctorId = ViewBag.IDDoctor})'" />
+    </div>
+    @*<a onclick="location.href='@Url.Action("Register","Account")'" class="myButton"> Inregistrare pacienti</a>*@
 
-        </tr>
-    </thead>
-    <tbody class="table-hover"></tbody>
+    <table class="table-fill">
+        <thead>
+            <tr>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.NumePacient)
+                </th>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.PrenumePacient)
+                </th>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.CNP)
+                </th>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.Varsta)
+                </th>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.Adresa)
+                </th>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.Telefon)
+                </th>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.Ocupatie)
+                </th>
+                <th class="text-left">
+                    Actiuni
+                </th>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumePacient)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PrenumePacient)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CNP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Varsta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adresa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ocupatie)
-            </td>
+            </tr>
+        </thead>
+        <tbody class="table-hover"></tbody>
 
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
-                @Html.ActionLink("Details", "Details", new {id = item.Id}) |
-                @Html.ActionLink("Delete", "Delete", new {id = item.Id})
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumePacient)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrenumePacient)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CNP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Varsta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ocupatie)
+                </td>
 
-</table>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "ActivitatePacienti", new { id = item.Id }, null)|
+                    @Html.ActionLink("Details", "ListareActivitatePacienti", "ActivitatePacienti", new { pacientId = item.Id }, null) |
+                    @Html.ActionLink("Listare Recomandari", "ListareRecomandariPacienti", "Recomandari", new { pacientId = item.Id }, null) |
+                    @Html.ActionLink("Creare Recomandare", "CreateRecomandare", "Recomandari", new { pacientId = item.Id }, null) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, null)
+
+                </td>
+            </tr>
+        }
+
+    </table>
 </body>
 </html>

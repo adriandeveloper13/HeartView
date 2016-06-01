@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace HeartView.Models
@@ -71,6 +72,9 @@ namespace HeartView.Models
 
         [Display(Name = "Badge Code - only for doctors")]
         public string BadgeCode { get; set; }
+
+
+        public Guid? IDDoctor { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

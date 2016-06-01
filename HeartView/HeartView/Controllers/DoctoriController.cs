@@ -37,7 +37,7 @@ namespace HeartView.Controllers
         // GET: Doctori/Create
         public virtual ActionResult Create(Guid aspNetUserId)
         {
-            ViewBag.AspNetUserId = aspNetUserId;
+            ViewBag.AspNetUserId = aspNetUserId;//care defapt este si id-ul doctorului
             return View();
         }
 

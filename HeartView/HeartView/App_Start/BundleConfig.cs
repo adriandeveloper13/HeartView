@@ -34,6 +34,10 @@ namespace HeartView
             bundles.Add(new ScriptBundle("~/bundles/pacientScript").Include(
                 "~/Scripts/Custom/pacientModule.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/recomandareScript").Include(
+                "~/Scripts/Custom/recomandariModule.js"));
+
+
             bundles.Add(new ScriptBundle("~/bundles/commonScript").Include(
                 "~/Scripts/Custom/commonModule.js",
                 "~/Scripts/Custom/ajaxHelper.js"));

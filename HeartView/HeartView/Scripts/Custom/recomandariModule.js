@@ -1,12 +1,12 @@
-﻿var pacientModule = function () {
+﻿var recomandariModule = function () {
 
     function setPostData() {
-        var postData = new FormData($("#save-pacient")[0]);
+        var postData = new FormData($("#save-recomandare")[0]);
 
         return postData;
     }
 
-    function create(aspNetUsetId, doctorId) {
+    function create(pacientId) {
         debugger;
 
         //var result = commonModule.validateForm("save-doctor");
@@ -15,13 +15,12 @@
         //}
 
         var postData = setPostData();
-        postData.append("IDDoctor", doctorId);
-        postData.append("AspNetUserId", aspNetUsetId);
+        postData.append("IDPacient", pacientId);
 
-        ajaxHelper.postFile("/Pacienti/Create", postData, function (data) {
+        ajaxHelper.postFile("/Recomandari/CreateRecomandare", postData, function (data) {
             debugger;
             if (commonModule.isDataValid(data)) {
-                commonModule.navigate("/Pacienti/Listare?doctorId=" + data.IDDoctor);
+                commonModule.navigate("/Recomandari/ListareRecomandariPacienti?pacientId=" + data.IDPacient);
             } else {
                 commonModule.navigate("/Home/About");
             }

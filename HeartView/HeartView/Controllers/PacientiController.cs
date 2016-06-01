@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using HealthView.BusinessLogic.ModelCore;
 using HealthView.Models;
+using LoggingService;
 
 namespace HeartView.Controllers
 {
@@ -34,28 +35,25 @@ namespace HeartView.Controllers
         //    return View(pacientiList);
         //}
         // GET: Pacienti/Create
-        public ActionResult Create(Guid aspNetUserId)
+        public ActionResult Create(Guid aspNetUserId, Guid doctorId)
         {
             ViewBag.AspNetUserId = aspNetUserId;
-            ViewBag.IDDoctor = aspNetUserId;
+            ViewBag.IDDoctor = doctorId;
             return View();
         }
 
         // POST: Pacienti/Create
         [HttpPost]
-        public async Task<ActionResult> Create( Pacienti pacientModel)
+        public async Task<ActionResult> Create(Pacienti pacientModel)
         {
             try
             {
-                var aspNetUserId = Guid.Parse(pacientModel.AspNetUserId);
-                var doctor = await DoctoriCore.Instance().GetByAspNetUserId(aspNetUserId);
-                pacientModel.IDDoctor = doctor.First().Id;
                 pacientModel.Status = "1";
                 var pacient = await PacientiCore.Instance().CreateAsync(pacientModel).ConfigureAwait(false);
 
                 return Json(pacient);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return Json(null);
             }
@@ -64,24 +62,17 @@ namespace HeartView.Controllers
         [HttpGet]
         public async Task<ActionResult> Listare(Guid doctorId)
         {
-            try
+
+            var pacienti = await PacientiCore.Instance().GetAllByDoctorId(doctorId).ConfigureAwait(false);
+
+            if (pacienti != null && pacienti.Count != 0)
             {
-                var pacienti = await PacientiCore.Instance().GetAllByDoctorId(doctorId).ConfigureAwait(false);
-
-                if (pacienti == null)
-                {
-                    return null;
-                }
-
-                ViewBag.IDDoctor = doctorId;
                 ViewBag.IDPacient = pacienti.FirstOrDefault().Id;
-                return View(pacienti);
             }
-            catch (Exception ex)
-            {
 
-                return null;
-            }
+            ViewBag.IDDoctor = doctorId;
+          
+            return View(pacienti);
         }
 
         // GET: Pacienti/Edit/5

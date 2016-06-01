@@ -2,22 +2,22 @@
 <Schema Namespace="HealthModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ActivitatePacienti">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="__createdAt" Type="datetimeoffset" Precision="3" />
     <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
     <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" />
     <Property Name="__deleted" Type="bit" />
-    <Property Name="Umiditate" Type="float" />
-    <Property Name="Data" Type="datetimeoffset" Precision="3" />
-    <Property Name="SenzorEKG" Type="float" />
+    <Property Name="Umiditate" Type="int" />
+    <Property Name="Data" Type="datetimeoffset" Precision="7" />
+    <Property Name="SenzorEKG" Type="int" />
     <Property Name="IDPacient" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Puls" Type="float" />
+    <Property Name="Puls" Type="int" />
     <Property Name="Status" Type="nvarchar(max)" />
-    <Property Name="Temperatura" Type="float" />
-    <Property Name="complete" Type="bit" />
+    <Property Name="Temperatura" Type="int" />
     <Property Name="IDDoctor" Type="uniqueidentifier" />
+    <Property Name="complete" Type="bit" />
   </EntityType>
   <EntityType Name="Recomandari">
     <Key>
@@ -62,6 +62,7 @@
     <Property Name="AccessFailedCount" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
     <Property Name="BadgeCode" Type="nvarchar(max)" />
+    <Property Name="IDDoctor" Type="uniqueidentifier" />
   </EntityType>
   <EntityType Name="Doctori">
     <Key>
@@ -91,30 +92,6 @@
     <Property Name="IDDoctor" Type="uniqueidentifier" Nullable="false" />
     <Property Name="AspNetUserId" Type="nvarchar" MaxLength="128" Nullable="false" />
   </EntityType>
-  <Association Name="FK_ActivitatePacienti_ToTable">
-    <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="1" />
-    <End Role="ActivitatePacienti" Type="Self.ActivitatePacienti" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pacienti">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ActivitatePacienti">
-        <PropertyRef Name="IDPacient" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ActivitatePacienti_ToTable_1">
-    <End Role="Doctori" Type="Self.Doctori" Multiplicity="0..1" />
-    <End Role="ActivitatePacienti" Type="Self.ActivitatePacienti" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Doctori">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ActivitatePacienti">
-        <PropertyRef Name="IDDoctor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
     <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -144,6 +121,18 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Doctori_ToTable">
+    <End Role="Pacienti" Type="Self.Pacienti" Multiplicity="1" />
+    <End Role="ActivitatePacienti" Type="Self.ActivitatePacienti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacienti">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActivitatePacienti">
+        <PropertyRef Name="IDPacient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctori_ToTable1">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
     <End Role="Doctori" Type="Self.Doctori" Multiplicity="*" />
     <ReferentialConstraint>
@@ -152,6 +141,18 @@
       </Principal>
       <Dependent Role="Doctori">
         <PropertyRef Name="AspNetUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctori_ToTable11">
+    <End Role="Doctori" Type="Self.Doctori" Multiplicity="0..1" />
+    <End Role="ActivitatePacienti" Type="Self.ActivitatePacienti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctori">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActivitatePacienti">
+        <PropertyRef Name="IDDoctor" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -211,14 +212,6 @@
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Doctori" EntityType="Self.Doctori" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pacienti" EntityType="Self.Pacienti" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_ActivitatePacienti_ToTable" Association="Self.FK_ActivitatePacienti_ToTable">
-      <End Role="Pacienti" EntitySet="Pacienti" />
-      <End Role="ActivitatePacienti" EntitySet="ActivitatePacienti" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ActivitatePacienti_ToTable_1" Association="Self.FK_ActivitatePacienti_ToTable_1">
-      <End Role="Doctori" EntitySet="Doctori" />
-      <End Role="ActivitatePacienti" EntitySet="ActivitatePacienti" />
-    </AssociationSet>
     <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
       <End Role="AspNetRoles" EntitySet="AspNetRoles" />
       <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
@@ -228,8 +221,16 @@
       <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
     </AssociationSet>
     <AssociationSet Name="FK_Doctori_ToTable" Association="Self.FK_Doctori_ToTable">
+      <End Role="Pacienti" EntitySet="Pacienti" />
+      <End Role="ActivitatePacienti" EntitySet="ActivitatePacienti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctori_ToTable1" Association="Self.FK_Doctori_ToTable1">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Doctori" EntitySet="Doctori" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctori_ToTable11" Association="Self.FK_Doctori_ToTable11">
+      <End Role="Doctori" EntitySet="Doctori" />
+      <End Role="ActivitatePacienti" EntitySet="ActivitatePacienti" />
     </AssociationSet>
     <AssociationSet Name="FK_Pacienti_0" Association="Self.FK_Pacienti_0">
       <End Role="Doctori" EntitySet="Doctori" />

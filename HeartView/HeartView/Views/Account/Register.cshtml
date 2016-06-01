@@ -1,4 +1,5 @@
-﻿@model HeartView.Models.RegisterViewModel
+﻿@using System.Web.Mvc.Html
+@model HeartView.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
 }
@@ -49,7 +50,8 @@
                         <label>
                             Password<span class="req">*</span>
                         </label>
-                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
 
 
@@ -57,13 +59,13 @@
                             <label>
                                 Confirm Password<span class="req">*</span>
                             </label>
-                            @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control" })
-
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                         </div>
 
+                       
+                        <input type="hidden" name="IDDoctor" id="idDoctor" value="@ViewBag.IDDoctor" />
                         <button type="submit" class="button button-block" >Register</button>
-
-
                 }
             </section>
         </div>

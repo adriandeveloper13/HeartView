@@ -137,8 +137,13 @@ namespace HeartView.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(string doctorId = ""/*Guid doctorId = default(Guid)*/ )
         {
+            if (doctorId != string.Empty)
+            {
+                ViewBag.IDDoctor = new Guid(doctorId);
+            }
+
             return View();
         }
 
@@ -151,7 +156,8 @@ namespace HeartView.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, BadgeCode = model.BadgeCode };
+
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, BadgeCode = model.BadgeCode, IDDoctor = model.IDDoctor};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -171,7 +177,8 @@ namespace HeartView.Controllers
                     else
                     {
                         //informatii aditionale pacient
-                        return RedirectToAction("Create", "Pacienti", new { aspNetUserId = user.Id});
+
+                        return RedirectToAction("Create", "Pacienti", new { aspNetUserId = user.Id, doctorId = model.IDDoctor});
                     }
                 }
                 AddErrors(result);

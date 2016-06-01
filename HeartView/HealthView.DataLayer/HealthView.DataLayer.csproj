@@ -104,6 +104,7 @@
     <Compile Include="Repositories\ActivitatePacientiRepository.cs" />
     <Compile Include="Repositories\DoctoriRepository.cs" />
     <Compile Include="Repositories\PacientiRepository.cs" />
+    <Compile Include="Repositories\RecomandariRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

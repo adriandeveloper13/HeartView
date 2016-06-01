@@ -4,60 +4,64 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Listare Activitate Pacienti</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Activitate Pacienti</title>
+        <link rel="stylesheet" href="~/Content/Custom/pacientistyle.css">
+    </head>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Data)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SenzorEKG)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Puls)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Temperatura)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.complete)
-            </th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SenzorEKG)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Puls)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Temperatura)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    <html lang="en">
+    <div class="heart">&#x2665;</div>
+    <body>
+        <div class="table-title">
+            <h2>Activitate pacient</h2>
+        </div>
+        <table class="table-fill">
+            <tr>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.Data)
+                </th>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.SenzorEKG)
+                </th>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.Puls)
+                </th>
+                <th class="text-left">
+                    @Html.DisplayNameFor(model => model.Temperatura)
+                </th>
+                <th class="text-left">
+                    Actiuni
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Data)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SenzorEKG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Puls)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Temperatura)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </body>
 </html>

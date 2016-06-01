@@ -84,3 +84,4 @@ D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\NLog.xml
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\HealthView.Interfaces.dll
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\bin\HealthView.Interfaces.pdb
 D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\obj\Debug\HeartView.Migrations.201605291450067_BadgeCode.resources
+D:\PROIECT IP\HeartViewRepository\HeartView\HeartView\obj\Debug\HeartView.Migrations.IDDoctor.resources

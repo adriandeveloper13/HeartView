@@ -5,51 +5,61 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using HealthView.BusinessLogic.ModelCore;
+using HealthView.Models;
 
 namespace HeartView.Controllers
 {
-    public class ActivitatePacientiController : Controller
+    public class RecomandariController : Controller
     {
-        // GET: ActivitatePacienti
+        // GET: Recomandari
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: ActivitatePacienti/Details/5
+        // GET: Recomandari/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: ActivitatePacienti/Create
-        public ActionResult Create()
+        // GET: Recomandari/Create
+        [HttpGet]
+        public ActionResult CreateRecomandare(Guid pacientId)
+        {
+            ViewBag.IDPacient = pacientId;
+            return View();
+        }
+
+        // POST: Recomandari/Create
+        [HttpPost]
+        public async Task<ActionResult> CreateRecomandare(Recomandari recomandareModel)
+        {
+            try
+            {
+                var recomandare = await RecomandariCore.Instance().CreateAsync(recomandareModel).ConfigureAwait(false);
+
+                return Json(recomandare);
+            }
+            catch (Exception ex)
+            {
+                return Json(null);
+            }
+        }
+
+        // GET: Recomandari/Edit/5
+        public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: ActivitatePacienti/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
         [HttpGet]
-        public async Task<ActionResult> ListareActivitatePacienti(Guid pacientId)
+        public async Task<ActionResult> ListareRecomandariPacienti(Guid pacientId)
         {
             try
             {
-                var fisePacienti = await ActivitatePacientiCore.Instance().List();
+                var recomandariPacient = await RecomandariCore.Instance().List();
 
                 //if (fisePacienti == null)
                 //{
@@ -58,7 +68,7 @@ namespace HeartView.Controllers
 
                 ViewBag.IDPacient = pacientId;
 
-                return View(fisePacienti);
+                return View(recomandariPacient);
             }
             catch (Exception)
             {
@@ -67,13 +77,7 @@ namespace HeartView.Controllers
             }
         }
 
-        // GET: ActivitatePacienti/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ActivitatePacienti/Edit/5
+        // POST: Recomandari/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -89,13 +93,13 @@ namespace HeartView.Controllers
             }
         }
 
-        // GET: ActivitatePacienti/Delete/5
+        // GET: Recomandari/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: ActivitatePacienti/Delete/5
+        // POST: Recomandari/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

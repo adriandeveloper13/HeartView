@@ -7,12 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using HealthView.Models.Interfaces;
+
 namespace HealthView.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Recomandari:Interfaces.IModel
+    public partial class Recomandari:Interfaces.IModel, IModelWithSinglePK
     {
         public System.Guid ID { get; set; }
         public System.Guid IDPacient { get; set; }
@@ -23,5 +25,6 @@ namespace HealthView.Models
     
         public virtual Doctori Doctori { get; set; }
         public virtual Pacienti Pacienti { get; set; }
+        public Guid Id { get; set; }
     }
 }

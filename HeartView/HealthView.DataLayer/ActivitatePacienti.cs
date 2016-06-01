@@ -7,31 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using HealthView.DataLayer.Interfaces;
-
 namespace HealthView.DataLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ActivitatePacienti:Interfaces.IDataAccesObject, IDataAccesObjectWithSinglePk
+    public partial class ActivitatePacienti:Interfaces.IDataAccesObjectWithSinglePk
     {
-        public System.Guid Id { get; set; }
+        public System.Guid id { get; set; }
         public Nullable<System.DateTimeOffset> C__createdAt { get; set; }
         public Nullable<System.DateTimeOffset> C__updatedAt { get; set; }
         public byte[] C__version { get; set; }
         public Nullable<bool> C__deleted { get; set; }
-        public Nullable<double> Umiditate { get; set; }
+        public Nullable<int> Umiditate { get; set; }
         public Nullable<System.DateTimeOffset> Data { get; set; }
-        public Nullable<double> SenzorEKG { get; set; }
+        public Nullable<int> SenzorEKG { get; set; }
         public System.Guid IDPacient { get; set; }
-        public Nullable<double> Puls { get; set; }
+        public Nullable<int> Puls { get; set; }
         public string Status { get; set; }
-        public Nullable<double> Temperatura { get; set; }
-        public Nullable<bool> complete { get; set; }
+        public Nullable<int> Temperatura { get; set; }
         public Nullable<System.Guid> IDDoctor { get; set; }
+        public Nullable<bool> complete { get; set; }
     
         public virtual Pacienti Pacienti { get; set; }
         public virtual Doctori Doctori { get; set; }
+
+        public Guid Id { get; set; }
     }
 }

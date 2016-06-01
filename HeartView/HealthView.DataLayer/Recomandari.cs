@@ -7,12 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using HealthView.DataLayer.Interfaces;
+using HealthView.Models.Interfaces;
+
 namespace HealthView.DataLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Recomandari:Interfaces.IDataAccesObject
+    public partial class Recomandari:Interfaces.IDataAccesObject, IDataAccesObjectWithSinglePk
     {
         public System.Guid ID { get; set; }
         public System.Guid IDPacient { get; set; }
@@ -23,5 +26,6 @@ namespace HealthView.DataLayer
     
         public virtual Doctori Doctori { get; set; }
         public virtual Pacienti Pacienti { get; set; }
+        public Guid Id { get; set; }
     }
 }
