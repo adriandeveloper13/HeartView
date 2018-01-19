@@ -45,8 +45,8 @@ namespace HealthView.DataLayer.Repositories
                 Context.Entry(recomandare).State = EntityState.Unchanged;
             }
 
-            Context.Entry(pacient.AspNetUsers).State = EntityState.Unchanged;
-            Context.Entry(pacient.Doctori).State = EntityState.Unchanged;
+            //Context.Entry(pacient.AspNetUsers).State = EntityState.Unchanged;
+            //Context.Entry(pacient.Doctori).State = EntityState.Unchanged;
 
             return await base.UpdateAsync(pacient, navigationProperties);
         }

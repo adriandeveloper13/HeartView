@@ -31,7 +31,29 @@
             });
     };
 
+
+
+    function updatePacient(pacientId, doctorId, aspNetUserId) {
+        debugger;
+        var postData = setPostData();
+        postData.append("Id", pacientId);
+        postData.append("IDDoctor", doctorId);
+        postData.append("AspNetUserId", aspNetUserId);
+        ajaxHelper.postFile("/Pacienti/UpdatePacient", postData, function (data) {
+            debugger;
+            if (commonModule.isDataValid(data)) {
+                commonModule.navigate("/Pacienti/Listare?doctorId=" + data.IDDoctor);
+            } else {
+                commonModule.navigate("/Home/About");
+            }
+        },
+            function () {
+                commonModule.navigate("/Home/About");
+            });
+    };
+
     return {
-        create: create
+        create: create,
+        updatePacient: updatePacient
     }
 }();

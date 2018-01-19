@@ -14,9 +14,8 @@
         <h2>Pacienti</h2>
     </div>
 
-    <div class="registerPacientsButton">
-        <input type="button" class="btn btn-default" style="background-color: #31A3D3" value="Inregistrare pacient" onclick="location.href = '@Url.Action("Register", "Account", new {doctorId = ViewBag.IDDoctor})'" />
-    </div>
+    <input type="button" class="btn btn-default" style="background-color: #31A3D3" value="Inregistrare pacient" onclick="location.href = '@Url.Action("Register", "Account", new {doctorId = ViewBag.IDDoctor})'" />
+    <
     @*<a onclick="location.href='@Url.Action("Register","Account")'" class="myButton"> Inregistrare pacienti</a>*@
 
     <table class="table-fill">
@@ -77,9 +76,9 @@
                 </td>
 
                 <td>
-                    @Html.ActionLink("Edit", "Edit", "ActivitatePacienti", new { id = item.Id }, null)|
+                    @Html.ActionLink("Edit", "UpdatePacient", "Pacienti", new { pacientId = item.Id , doctorId = item.IDDoctor, aspNetUserId = item.AspNetUserId}, null)|
                     @Html.ActionLink("Details", "ListareActivitatePacienti", "ActivitatePacienti", new { pacientId = item.Id }, null) |
-                    @Html.ActionLink("Listare Recomandari", "ListareRecomandariPacienti", "Recomandari", new { pacientId = item.Id }, null) |
+                    @Html.ActionLink("Listare Recomandari", "ListareRecomandariPacienti", "Recomandari", new { pacientId = item.Id, doctorId = item.IDDoctor, aspNetUserId = item.AspNetUserId }, null) |
                     @Html.ActionLink("Creare Recomandare", "CreateRecomandare", "Recomandari", new { pacientId = item.Id }, null) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id }, null)
 

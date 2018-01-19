@@ -5,17 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Recomandari</title>
-    <link rel="stylesheet" href="~/Content/Custom/style.css">
+    <link rel="stylesheet" href="~/Content/Custom/pacientistyle.css">s
 </head>
-
 <body>
+    <div class="heart">&#x2665;</div>
+
     <div class="table-title">
         <h2>Recomandari</h2>
     </div>
     @*<input type="button" class=" btn btn-default" style="background-color: #31A3D3" value="CreareRecomandare" onclick="location.href='@Url.Action("Register","Account", new {doctorId = ViewBag.IDDoctor })'" />*@
     @*<a onclick="location.href='@Url.Action("Register","Account")'" class="myButton"> Inregistrare pacienti</a>*@
 
-    <table class="table table-fill">
+    <table class="table-fill">
         <thead>
             <tr>
                 <th class="text-left">
@@ -36,7 +37,7 @@
         <tbody class="table-hover"></tbody>
 
         @foreach (var item in Model)
-        {
+            {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.TipRecomandare)
@@ -49,7 +50,7 @@
                 </td>
 
                 <td>
-                    @Html.ActionLink("Edit", "Edit", "Recomandari", new { id = item.Id }, null)|
+                    @Html.ActionLink("Edit", "UpdateRecomandare", "Recomandari", new { idRecomandare = item.Id, pacientId = @ViewBag.IDDoctor, doctorId  = @ViewBag.IDPacient}, null)|
                     @Html.ActionLink("Details", "Details", "Recomandari", new { pacientId = item.Id }, null) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id }, null)|
 
@@ -58,5 +59,6 @@
         }
 
     </table>
+    
 </body>
 </html>

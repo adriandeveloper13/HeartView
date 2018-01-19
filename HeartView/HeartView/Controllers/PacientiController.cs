@@ -75,6 +75,27 @@ namespace HeartView.Controllers
             return View(pacienti);
         }
 
+
+        [HttpGet]
+        public virtual async Task<ActionResult> UpdatePacient(Guid pacientId, Guid doctorId, Guid aspNetUserId)
+        {
+            var model = await PacientiCore.Instance().GetAsync(pacientId).ConfigureAwait(false);
+
+
+            ViewBag.IDPacient = pacientId;
+            ViewBag.IDDoctor = doctorId;
+            ViewBag.AspNetUserId = aspNetUserId;
+            return View(model);
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> UpdatePacient(Pacienti model)
+        {
+            var updatedPacient = await PacientiCore.Instance().UpdateAsync(model).ConfigureAwait(false);
+
+            return Json(updatedPacient);
+        }
+
         // GET: Pacienti/Edit/5
         public ActionResult Edit(int id)
         {

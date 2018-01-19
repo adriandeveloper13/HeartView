@@ -28,6 +28,7 @@ namespace HeartView.Controllers
         public ActionResult CreateRecomandare(Guid pacientId)
         {
             ViewBag.IDPacient = pacientId;
+           
             return View();
         }
 
@@ -55,18 +56,15 @@ namespace HeartView.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult> ListareRecomandariPacienti(Guid pacientId)
+        public async Task<ActionResult> ListareRecomandariPacienti(Guid pacientId, Guid doctorId)
         {
             try
             {
                 var recomandariPacient = await RecomandariCore.Instance().List();
 
-                //if (fisePacienti == null)
-                //{
-                //    return null;
-                //}
 
                 ViewBag.IDPacient = pacientId;
+                ViewBag.IDDoctor = doctorId;
 
                 return View(recomandariPacient);
             }
@@ -75,6 +73,27 @@ namespace HeartView.Controllers
 
                 throw;
             }
+        }
+
+
+        [HttpGet]
+        public virtual async Task<ActionResult> UpdateRecomandare(Guid idRecomandare, Guid pacientId, Guid doctorId)
+        {
+            var model = await RecomandariCore.Instance().GetAsync(pacientId).ConfigureAwait(false);
+
+
+            ViewBag.IDRecomandare = idRecomandare;
+            ViewBag.IDPacient = pacientId;
+            ViewBag.IDDoctor = doctorId;
+            return View(model);
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> UpdateRecomandare(Recomandari model)
+        {
+            var updatedRecomandare = await RecomandariCore.Instance().UpdateAsync(model).ConfigureAwait(false);
+
+            return Json(updatedRecomandare);
         }
 
         // POST: Recomandari/Edit/5

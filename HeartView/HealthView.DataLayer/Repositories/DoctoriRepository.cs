@@ -52,5 +52,10 @@ namespace HealthView.DataLayer.Repositories
         {
             return await GetListAsync(doctor => doctor.AspNetUserId == aspNetUserId.ToString(), navigationProperties);
         }
+
+        public async Task<IList<Doctori>> GetAllByEmail(string email, IList<string> navigationProperties = null)
+        {
+            return await GetListAsync(doctor => doctor.AspNetUserId == 1.ToString(), navigationProperties);
+        }
     }
 }

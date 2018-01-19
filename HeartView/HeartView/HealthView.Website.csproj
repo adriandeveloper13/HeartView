@@ -289,6 +289,8 @@
     <Content Include="Views\ActivitatePacienti\ListareActivitatePacienti.cshtml" />
     <Content Include="Views\Recomandari\ListareRecomandariPacienti.cshtml" />
     <Content Include="Views\Recomandari\CreateRecomandare.cshtml" />
+    <Content Include="Views\Pacienti\UpdatePacient.cshtml" />
+    <Content Include="Views\Recomandari\UpdateRecomandare.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

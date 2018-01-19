@@ -21,8 +21,15 @@ namespace HealthView.DataLayer.BaseRepo
 
         public override async Task<T> UpdateAsync(T model, IList<string> navigationProperties = null)
         {
-            await ChangeAsync(model);
-            return await GetAsync(model.Id, navigationProperties);
+            try
+            {
+                await ChangeAsync(model);
+                return await GetAsync(model.Id, navigationProperties);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public async Task<T> MarkAsync(Guid id, int status)

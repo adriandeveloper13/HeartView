@@ -60,5 +60,9 @@ namespace HealthView.BusinessLogic.ModelCore
                 return pacienti == null ? new List<Pacienti>() : pacienti.CopyTo<Pacienti>();
             }
         }
+
+
+    
+
     }
 }

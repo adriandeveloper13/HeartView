@@ -51,15 +51,23 @@ namespace HealthView.BusinessLogic.BaseCore
                     LogHelper.LogInfo("Attempted to update entity with empty Id");
                     return null;
                 }
-                var updatedModel = await repoInstance.UpdateAsync(dataLayerModel, navigationProperties);
-                if (updatedModel == null)
+                try
                 {
-                    LogHelper.LogException("The entity could not be updated");
-                    return null;
+                    var updatedModel = await repoInstance.UpdateAsync(dataLayerModel, navigationProperties);
+                    if (updatedModel == null)
+                    {
+                        LogHelper.LogException("The entity could not be updated");
+                        return null;
+                    }
+                    return updatedModel.CopyTo<T>();
                 }
-                return updatedModel.CopyTo<T>();
+            catch
+            (Exception ex)
+            {
+                throw;
             }
         }
+    }
 
         public async Task RemoveAsync(Guid id)
         {

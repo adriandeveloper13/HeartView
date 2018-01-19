@@ -83,6 +83,20 @@ namespace HealthView.BusinessLogic.ModelCore
             }
         }
 
+        //public async Task<IList<Doctori>> GetByEmail(string email)
+        //{
+        //    using (var doctoriRepository = (DoctoriRepository)GetRepoInstance())
+        //    {
+        //        var doctori = await doctoriRepository.GetByEmail(email);
+        //        //if (doctori == null || doctori.Count == 0)
+        //        //{
+        //        //    return new List<Doctori>();
+        //        //}
+
+        //        return doctori.CopyTo<Doctori>();
+        //    }
+        //}
+
         //public List<T> GetUserIdentityData<T>(string aspNetUserId) where T : class, IUserIdentityData, new()
         //{
         //    var spExec = new StoredProcedureExecutor();
